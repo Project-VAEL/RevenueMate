@@ -54,12 +54,12 @@ export function StockCatalogue() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#18181C] border border-white/[0.08] rounded-3xl p-5 md:p-6 space-y-5">
+    <div className="flex flex-col h-full bg-[#191A1E] border border-white/[0.07] rounded-[32px] p-5 md:p-6 space-y-4">
       {/* 1. Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3.5 border-b border-white/[0.06]">
         <div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-[#94CCA0]/20 text-[#94CCA0] flex items-center justify-center">
               <Boxes className="w-4 h-4" />
             </div>
             <h2 className="text-lg md:text-xl font-black text-white tracking-tight">
@@ -73,13 +73,13 @@ export function StockCatalogue() {
 
         {/* Search */}
         <div className="relative min-w-[220px]">
-          <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search SKU or product name..."
-            className="w-full bg-[#121214] border border-white/10 rounded-2xl pl-9 pr-4 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500"
+            className="w-full bg-[#141518] border border-white/10 rounded-2xl pl-9 pr-4 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#94CCA0]"
           />
         </div>
       </div>
@@ -251,3 +251,4 @@ export function StockCatalogue() {
     </div>
   );
 }
+

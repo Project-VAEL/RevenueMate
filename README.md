@@ -88,3 +88,4 @@ npm run start
 - **Zero Real Credentials**: No live WhatsApp or payment gateway secrets are exposed in browser code.
 - **Honest Metrics**: Displays real workflow counts only (no fabricated ROI or fake conversion percentages).
 - **No Fake Badges**: All simulated actions are explicitly identified with a `MOCK DEMO MODE` badge.
+

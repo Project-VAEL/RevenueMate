@@ -2,209 +2,219 @@
 
 import React from 'react';
 import { useStore } from '@/context/StoreContext';
-import { Users, Clock, ShieldAlert, BadgeIndianRupee } from 'lucide-react';
+import { MessageSquare, ShieldCheck, CreditCard, Boxes, TrendingUp, AlertTriangle } from 'lucide-react';
 
 export function MetricsGrid() {
   const { metrics, setActiveView } = useStore();
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 px-4 md:px-6">
-      {/* 1. Purple Card: Active Leads & Enquiries */}
-      <div
-        onClick={() => setActiveView('inbox')}
-        className="relative overflow-hidden rounded-3xl p-6 bg-[#8B5CF6] text-white cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-purple-500/10 group"
-      >
-        <div className="flex items-start justify-between relative z-10">
-          <div>
-            <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-purple-200 mb-1">
-              <Users className="w-3.5 h-3.5" />
-              <span>Active Leads</span>
-            </div>
-            <div className="text-4xl md:text-5xl font-black tracking-tight text-white mt-1">
-              {metrics.activeLeadsCount}
-            </div>
-          </div>
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white backdrop-blur-sm">
-            PIPELINE
+    <div className="space-y-4">
+      {/* 1. Header Hero Stat matching reference: TOTAL BALANCE / TOTAL SALES TODAY */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+            TOTAL SALES REVENUE TODAY
           </span>
-        </div>
-
-        <div className="relative z-10 mt-4 flex items-center justify-between">
-          <p className="text-xs text-purple-100 font-medium">
-            Open enquiries across WhatsApp &amp; In-Store
-          </p>
-          <span className="text-xs text-white underline font-semibold group-hover:translate-x-0.5 transition-transform">
-            View Inbox →
-          </span>
-        </div>
-
-        {/* Abstract Line Wave SVG */}
-        <svg
-          className="absolute -bottom-2 -right-2 w-36 h-24 text-purple-400/25 pointer-events-none"
-          viewBox="0 0 144 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 45C24 45 36 20 60 20C84 20 96 55 120 55C132 55 138 35 144 35V72H0V45Z"
-            fill="currentColor"
-          />
-          <path
-            d="M0 45C24 45 36 20 60 20C84 20 96 55 120 55C132 55 138 35 144 35"
-            stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      {/* 2. Warm Mustard Yellow Card: Follow-up Approvals */}
-      <div
-        onClick={() => setActiveView('approvals')}
-        className="relative overflow-hidden rounded-3xl p-6 bg-[#F59E0B] text-zinc-950 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-amber-500/10 group"
-      >
-        <div className="flex items-start justify-between relative z-10">
-          <div>
-            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-950/80 mb-1">
-              <Clock className="w-3.5 h-3.5" />
-              <span>Approvals Due</span>
-            </div>
-            <div className="text-4xl md:text-5xl font-black tracking-tight text-zinc-950 mt-1">
-              {metrics.approvalsDueCount}
-            </div>
-          </div>
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/15 text-zinc-950 backdrop-blur-sm">
-            HUMAN SIGN-OFF
-          </span>
-        </div>
-
-        <div className="relative z-10 mt-4 flex items-center justify-between">
-          <p className="text-xs text-amber-950 font-semibold">
-            {metrics.expiringApprovalsCount > 0
-              ? `⚡ ${metrics.expiringApprovalsCount} expiring within 45 mins`
-              : 'All drafts within SLA window'}
-          </p>
-          <span className="text-xs text-zinc-950 underline font-bold group-hover:translate-x-0.5 transition-transform">
-            Review →
-          </span>
-        </div>
-
-        {/* Abstract Line Wave SVG */}
-        <svg
-          className="absolute -bottom-2 -right-2 w-36 h-24 text-amber-600/25 pointer-events-none"
-          viewBox="0 0 144 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 50C30 50 45 15 75 15C105 15 115 48 144 48V72H0V50Z"
-            fill="currentColor"
-          />
-          <path
-            d="M0 50C30 50 45 15 75 15C105 15 115 48 144 48"
-            stroke="#18181B"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      {/* 3. Soft Coral / Peach Card: Payment Status */}
-      <div
-        onClick={() => setActiveView('payments')}
-        className="relative overflow-hidden rounded-3xl p-6 bg-[#FB7185] text-zinc-950 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-rose-500/10 group"
-      >
-        <div className="flex items-start justify-between relative z-10">
-          <div>
-            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-rose-950/80 mb-1">
-              <ShieldAlert className="w-3.5 h-3.5" />
-              <span>Pending Verifications</span>
-            </div>
-            <div className="text-4xl md:text-5xl font-black tracking-tight text-zinc-950 mt-1">
-              {metrics.pendingPaymentsCount}
-            </div>
-          </div>
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/15 text-zinc-950 backdrop-blur-sm">
-            BANK STATUS
-          </span>
-        </div>
-
-        <div className="relative z-10 mt-4 flex items-center justify-between">
-          <p className="text-xs text-rose-950 font-semibold">
-            UPI links awaiting bank confirmation
-          </p>
-          <span className="text-xs text-zinc-950 underline font-bold group-hover:translate-x-0.5 transition-transform">
-            Verify →
-          </span>
-        </div>
-
-        {/* Abstract Line Wave SVG */}
-        <svg
-          className="absolute -bottom-2 -right-2 w-36 h-24 text-rose-600/25 pointer-events-none"
-          viewBox="0 0 144 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 35C20 35 40 60 70 60C100 60 115 25 144 25V72H0V35Z"
-            fill="currentColor"
-          />
-          <path
-            d="M0 35C20 35 40 60 70 60C100 60 115 25 144 25"
-            stroke="#18181B"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      {/* 4. Mint/Sage Green Card: Recorded Sales Today */}
-      <div
-        onClick={() => setActiveView('payments')}
-        className="relative overflow-hidden rounded-3xl p-6 bg-[#10B981] text-zinc-950 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-emerald-500/10 group"
-      >
-        <div className="flex items-start justify-between relative z-10">
-          <div>
-            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-950/80 mb-1">
-              <BadgeIndianRupee className="w-3.5 h-3.5" />
-              <span>Sales Recorded Today</span>
-            </div>
-            <div className="text-3xl md:text-4xl font-black tracking-tight text-zinc-950 mt-1">
+          <div className="flex items-baseline gap-1 mt-0.5">
+            <span className="text-4xl md:text-5xl font-black tracking-tight text-white tabular-nums">
               ₹{metrics.todaySalesAmount.toLocaleString('en-IN')}
+            </span>
+            <span className="text-2xl font-bold text-zinc-500">.00</span>
+          </div>
+          <div className="mt-2 flex items-center gap-2">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#94CCA0]/20 text-[#94CCA0] border border-[#94CCA0]/30">
+              <TrendingUp className="w-3 h-3" />
+              +14.2% Today
+            </span>
+            <span className="text-xs text-zinc-500 font-medium">
+              {metrics.todaySalesCount} confirmed sales ({metrics.offlineSalesCount} offline walk-ins)
+            </span>
+          </div>
+        </div>
+
+        {/* Section Title & See All */}
+        <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto pt-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+            PIPELINE STAGES
+          </span>
+          <button
+            onClick={() => setActiveView('pipeline')}
+            className="text-xs text-zinc-400 hover:text-white font-semibold transition-colors"
+          >
+            See All
+          </button>
+        </div>
+      </div>
+
+      {/* 2. The 4 Bento Pill Cards Row matching the reference image */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        {/* Card 1: Soft Violet / Periwinkle (Bitcoin style in reference) */}
+        <div
+          onClick={() => setActiveView('inbox')}
+          className="rounded-[28px] p-5 bg-[#6B5CE7] text-white cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-[#6B5CE7]/15 flex flex-col justify-between min-h-[175px]"
+        >
+          {/* Top: Icon + Title + Subtitle */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-xs backdrop-blur-sm">
+              <MessageSquare className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs font-bold leading-tight text-white">Active Leads</h4>
+              <p className="text-[10px] text-purple-200 font-mono tracking-wider uppercase">
+                WHATSAPP &amp; IG
+              </p>
             </div>
           </div>
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/15 text-zinc-950 backdrop-blur-sm">
-            {metrics.todaySalesCount} CLOSED
-          </span>
+
+          {/* Center: Hand-drawn style jagged sparkline wave */}
+          <div className="my-2 py-1">
+            <svg className="w-full h-8 overflow-visible" viewBox="0 0 100 24" fill="none">
+              <path
+                d="M0 16 L 15 16 L 25 8 L 35 18 L 45 6 L 55 16 L 65 10 L 75 18 L 88 4 L 100 12"
+                stroke="white"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Bottom: Big bold price & pill badge */}
+          <div className="flex items-center justify-between pt-1">
+            <div className="text-2xl font-black tracking-tight text-white">
+              {metrics.activeLeadsCount} <span className="text-xs font-normal opacity-80">Leads</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#94CCA0] text-zinc-950">
+              ↗ +4 Today
+            </span>
+          </div>
         </div>
 
-        <div className="relative z-10 mt-4 flex items-center justify-between">
-          <p className="text-xs text-emerald-950 font-semibold">
-            {metrics.offlineSalesCount} offline walk-ins • Follow-ups suppressed
-          </p>
-          <span className="text-xs text-zinc-950 underline font-bold group-hover:translate-x-0.5 transition-transform">
-            Ledger →
-          </span>
-        </div>
-
-        {/* Abstract Line Wave SVG */}
-        <svg
-          className="absolute -bottom-2 -right-2 w-36 h-24 text-emerald-600/25 pointer-events-none"
-          viewBox="0 0 144 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        {/* Card 2: Buttery Yellow / Mustard (Ripple style in reference) */}
+        <div
+          onClick={() => setActiveView('approvals')}
+          className="rounded-[28px] p-5 bg-[#F7B955] text-zinc-950 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-[#F7B955]/15 flex flex-col justify-between min-h-[175px]"
         >
-          <path
-            d="M0 60C35 60 45 25 80 25C110 25 125 45 144 45V72H0V60Z"
-            fill="currentColor"
-          />
-          <path
-            d="M0 60C35 60 45 25 80 25C110 25 125 45 144 45"
-            stroke="#18181B"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
+          {/* Top: Icon + Title + Subtitle */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-black/15 text-zinc-950 flex items-center justify-center font-bold text-xs">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs font-black leading-tight text-zinc-950">Approvals Due</h4>
+              <p className="text-[10px] text-zinc-950/70 font-mono tracking-wider uppercase font-bold">
+                HUMAN REVIEW
+              </p>
+            </div>
+          </div>
+
+          {/* Center: Dark jagged sparkline wave */}
+          <div className="my-2 py-1">
+            <svg className="w-full h-8 overflow-visible" viewBox="0 0 100 24" fill="none">
+              <path
+                d="M0 14 L 12 14 L 22 20 L 35 6 L 48 16 L 60 8 L 72 18 L 84 10 L 100 16"
+                stroke="#191A1E"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Bottom: Big bold count & pill badge */}
+          <div className="flex items-center justify-between pt-1">
+            <div className="text-2xl font-black tracking-tight text-zinc-950">
+              {metrics.approvalsDueCount} <span className="text-xs font-normal opacity-80">Queue</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/15 text-zinc-950">
+              ⚡ 18m SLA
+            </span>
+          </div>
+        </div>
+
+        {/* Card 3: Soft Coral / Terracotta (Binance Coin style in reference) */}
+        <div
+          onClick={() => setActiveView('payments')}
+          className="rounded-[28px] p-5 bg-[#EE7A5C] text-zinc-950 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-[#EE7A5C]/15 flex flex-col justify-between min-h-[175px]"
+        >
+          {/* Top: Icon + Title + Subtitle */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-black/15 text-zinc-950 flex items-center justify-center font-bold text-xs">
+              <CreditCard className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs font-black leading-tight text-zinc-950">Payment Verifications</h4>
+              <p className="text-[10px] text-zinc-950/70 font-mono tracking-wider uppercase font-bold">
+                UPI &amp; WEBHOOKS
+              </p>
+            </div>
+          </div>
+
+          {/* Center: Dark jagged sparkline wave */}
+          <div className="my-2 py-1">
+            <svg className="w-full h-8 overflow-visible" viewBox="0 0 100 24" fill="none">
+              <path
+                d="M0 18 L 15 12 L 30 16 L 45 8 L 60 14 L 75 6 L 88 18 L 100 10"
+                stroke="#191A1E"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Bottom: Big bold amount & pill badge */}
+          <div className="flex items-center justify-between pt-1">
+            <div className="text-2xl font-black tracking-tight text-zinc-950">
+              {metrics.pendingPaymentsCount} <span className="text-xs font-normal opacity-80">Pending</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/15 text-zinc-950">
+              2 Links Active
+            </span>
+          </div>
+        </div>
+
+        {/* Card 4: Matte Dark Card (Ethereum style in reference) */}
+        <div
+          onClick={() => setActiveView('catalogue')}
+          className="rounded-[28px] p-5 bg-[#191A1E] text-white border border-white/[0.08] hover:border-white/20 cursor-pointer transition-all duration-200 hover:-translate-y-1 shadow-lg shadow-black/20 flex flex-col justify-between min-h-[175px]"
+        >
+          {/* Top: Icon + Title + Subtitle */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center font-bold text-xs">
+              <Boxes className="w-4 h-4" />
+            </div>
+            <div>
+              <h4 className="text-xs font-bold leading-tight text-white">Stock Freshness</h4>
+              <p className="text-[10px] text-zinc-400 font-mono tracking-wider uppercase">
+                INVENTORY AUDIT
+              </p>
+            </div>
+          </div>
+
+          {/* Center: Mint green jagged sparkline wave */}
+          <div className="my-2 py-1">
+            <svg className="w-full h-8 overflow-visible" viewBox="0 0 100 24" fill="none">
+              <path
+                d="M0 16 L 14 16 L 26 10 L 40 18 L 52 8 L 66 14 L 80 6 L 92 14 L 100 8"
+                stroke="#94CCA0"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          {/* Bottom: Big bold count & pill badge */}
+          <div className="flex items-center justify-between pt-1">
+            <div className="text-2xl font-black tracking-tight text-white">
+              {metrics.staleStockCount} <span className="text-xs font-normal text-zinc-400">Unknown</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#F7B955]/20 text-[#F7B955] border border-[#F7B955]/30">
+              ⚠ Check Shelf
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

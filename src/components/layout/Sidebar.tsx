@@ -3,13 +3,13 @@
 import React from 'react';
 import { useStore } from '@/context/StoreContext';
 import {
+  LayoutGrid,
   GitPullRequest,
   Inbox,
   Package,
   ShieldCheck,
   CreditCard,
-  PlusCircle,
-  Sparkles,
+  Plus,
   HelpCircle,
 } from 'lucide-react';
 
@@ -25,129 +25,129 @@ export function Sidebar() {
   const navItems = [
     {
       id: 'pipeline' as const,
-      icon: GitPullRequest,
-      label: 'Sales Pipeline (7-Stage Workflow)',
+      icon: LayoutGrid,
+      label: 'OVERVIEW',
       badge: null,
     },
     {
       id: 'inbox' as const,
       icon: Inbox,
-      label: 'Lead Inbox & Conversations',
+      label: 'INBOX',
       badge: metrics.activeLeadsCount > 0 ? metrics.activeLeadsCount : null,
     },
     {
       id: 'catalogue' as const,
       icon: Package,
-      label: 'Product Catalogue & Stock Freshness',
+      label: 'STOCK',
       badge: metrics.staleStockCount > 0 ? '!' : null,
-      badgeColor: 'bg-amber-500 text-black',
+      badgeColor: 'bg-[#F7B955] text-zinc-950',
     },
     {
       id: 'approvals' as const,
       icon: ShieldCheck,
-      label: 'Follow-up Approval Panel',
+      label: 'APPROVALS',
       badge: metrics.approvalsDueCount > 0 ? metrics.approvalsDueCount : null,
-      badgeColor: 'bg-amber-400 text-black',
+      badgeColor: 'bg-[#F7B955] text-zinc-950',
     },
     {
       id: 'payments' as const,
       icon: CreditCard,
-      label: 'Payment & Order Status',
+      label: 'PAYMENTS',
       badge: metrics.pendingPaymentsCount > 0 ? metrics.pendingPaymentsCount : null,
-      badgeColor: 'bg-rose-400 text-black',
+      badgeColor: 'bg-[#EE7A5C] text-zinc-950',
     },
   ];
 
   return (
     <>
-      {/* Desktop Vertical Minimalist Floating Sidebar */}
-      <aside className="hidden md:flex flex-col items-center justify-between py-6 px-3 bg-[#18181C]/90 backdrop-blur-md border border-white/[0.08] rounded-3xl w-18 shrink-0 my-4 ml-4 h-[calc(100vh-2rem)] sticky top-4 z-40 shadow-2xl">
-        {/* Top: Geometric Brand Icon */}
-        <div className="flex flex-col items-center gap-6">
+      {/* Desktop Vertical Minimalist Sidebar matching the reference image */}
+      <aside className="hidden md:flex flex-col items-center justify-between py-6 px-2.5 w-20 shrink-0 sticky top-4 h-[calc(100vh-2rem)] select-none">
+        {/* Top: Iconic Organic Coral/Orange Curved Symbol */}
+        <div className="flex flex-col items-center gap-7">
           <div
             onClick={() => setActiveView('pipeline')}
-            className="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white cursor-pointer hover:scale-105 transition-transform shadow-lg shadow-purple-500/20"
-            title="RevenueMate - Sales Workflow Automation"
+            className="w-10 h-10 flex items-center justify-center cursor-pointer transition-transform hover:scale-105"
+            title="RevenueMate"
           >
-            <Sparkles className="w-5 h-5 text-white" />
+            {/* Custom organic logo mark matching reference image */}
+            <svg
+              className="w-8 h-8 text-[#EE7A5C]"
+              viewBox="0 0 32 32"
+              fill="currentColor"
+            >
+              <path d="M16 3C11 3 8 7 8 12C8 17 12 18 16 19C20 20 24 21 24 26C24 30 19 31 16 31C11 31 9 27 9 27L6 29C6 29 9 34 16 34C22 34 27 31 27 25C27 19 23 17 19 16C15 15 11 14 11 10C11 7 14 5 16 5C19 5 21 8 21 8L24 6C24 6 21 3 16 3Z" />
+            </svg>
           </div>
 
-          {/* Navigation Icons Stack */}
-          <nav className="flex flex-col items-center gap-3 mt-4">
+          {/* Navigation Items: Icon + Micro-Label */}
+          <nav className="flex flex-col items-center gap-5">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeView === item.id;
               return (
-                <div key={item.id} className="relative group">
-                  <button
-                    onClick={() => setActiveView(item.id)}
-                    className={`w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-200 relative ${
-                      isActive
-                        ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-sm'
-                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.06]'
+                <button
+                  key={item.id}
+                  onClick={() => setActiveView(item.id)}
+                  className={`flex flex-col items-center gap-1.5 transition-all group relative p-1.5 rounded-xl ${
+                    isActive ? 'text-[#EE7A5C]' : 'text-zinc-500 hover:text-zinc-300'
+                  }`}
+                >
+                  <div
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center relative transition-all ${
+                      isActive ? 'bg-[#22242A] text-[#EE7A5C]' : 'group-hover:bg-[#1A1B1F]'
                     }`}
                   >
-                    <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.2]' : 'stroke-[1.8]'}`} />
-
-                    {/* Active highlight dot */}
-                    {isActive && (
-                      <span className="absolute -left-1.5 w-1 h-4 bg-purple-400 rounded-r-full" />
-                    )}
+                    <Icon className="w-5 h-5 stroke-[1.8]" />
 
                     {/* Badge notification */}
                     {item.badge && (
                       <span
-                        className={`absolute -top-1 -right-1 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center ${
-                          item.badgeColor || 'bg-purple-500 text-white'
+                        className={`absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full text-[9px] font-bold flex items-center justify-center ${
+                          item.badgeColor || 'bg-[#EE7A5C] text-white'
                         }`}
                       >
                         {item.badge}
                       </span>
                     )}
-                  </button>
-
-                  {/* Tooltip on hover */}
-                  <div className="absolute left-14 top-1/2 -translate-y-1/2 ml-2 px-3 py-1.5 bg-zinc-900 text-white text-xs font-medium rounded-xl whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50 border border-white/10 shadow-xl">
-                    {item.label}
                   </div>
-                </div>
+
+                  <span
+                    className={`text-[9px] font-bold tracking-widest uppercase ${
+                      isActive ? 'text-white' : 'text-zinc-500 group-hover:text-zinc-400'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </button>
               );
             })}
           </nav>
         </div>
 
-        {/* Bottom Actions */}
-        <div className="flex flex-col items-center gap-3">
-          {/* Quick Offline Sale Trigger */}
-          <div className="relative group">
-            <button
-              onClick={() => setIsOfflineSaleModalOpen(true)}
-              className="w-11 h-11 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center hover:bg-emerald-500 hover:text-zinc-950 transition-all duration-200"
-            >
-              <PlusCircle className="w-5 h-5" />
-            </button>
-            <div className="absolute left-14 top-1/2 -translate-y-1/2 ml-2 px-3 py-1.5 bg-zinc-900 text-white text-xs font-medium rounded-xl whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50 border border-white/10 shadow-xl">
-              Record Offline Sale (Direct UPI / Cash)
-            </div>
-          </div>
+        {/* Bottom Actions: Circular Mint-Green Action Button matching reference */}
+        <div className="flex flex-col items-center gap-4">
+          {/* Guide Icon */}
+          <button
+            onClick={() => setIsDemoGuideOpen(true)}
+            className="text-zinc-500 hover:text-zinc-300 p-1.5 transition-colors"
+            title="Workflow Guide"
+          >
+            <HelpCircle className="w-4 h-4" />
+          </button>
 
-          {/* Demo Guide Trigger */}
-          <div className="relative group">
-            <button
-              onClick={() => setIsDemoGuideOpen(true)}
-              className="w-11 h-11 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/[0.06] flex items-center justify-center transition-colors"
-            >
-              <HelpCircle className="w-5 h-5" />
-            </button>
-            <div className="absolute left-14 top-1/2 -translate-y-1/2 ml-2 px-3 py-1.5 bg-zinc-900 text-white text-xs font-medium rounded-xl whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50 border border-white/10 shadow-xl">
-              Workflow Guide & Prototype Checklist
-            </div>
-          </div>
+          {/* Solid Mint-Green Round Action Pill */}
+          <button
+            onClick={() => setIsOfflineSaleModalOpen(true)}
+            className="w-10 h-10 rounded-full bg-[#94CCA0] hover:bg-[#A5DDB1] text-zinc-950 flex items-center justify-center shadow-lg transition-transform hover:scale-105 cursor-pointer"
+            title="Record In-Store Offline Sale"
+          >
+            <Plus className="w-5 h-5 stroke-[2.5]" />
+          </button>
         </div>
       </aside>
 
       {/* Mobile Floating Bottom Bar */}
-      <nav className="md:hidden fixed bottom-3 left-3 right-3 bg-[#18181C]/95 backdrop-blur-md border border-white/10 rounded-3xl py-2 px-4 flex items-center justify-around z-50 shadow-2xl">
+      <nav className="md:hidden fixed bottom-3 left-3 right-3 bg-[#16171A]/95 backdrop-blur-md border border-white/10 rounded-3xl py-2 px-4 flex items-center justify-around z-50 shadow-2xl">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeView === item.id;
@@ -155,15 +155,16 @@ export function Sidebar() {
             <button
               key={item.id}
               onClick={() => setActiveView(item.id)}
-              className={`p-2.5 rounded-2xl relative transition-all ${
-                isActive ? 'bg-purple-500/20 text-purple-300' : 'text-zinc-400'
+              className={`p-2 rounded-2xl flex flex-col items-center relative transition-all ${
+                isActive ? 'text-[#EE7A5C]' : 'text-zinc-500'
               }`}
             >
               <Icon className="w-5 h-5" />
+              <span className="text-[8px] font-bold tracking-wider mt-0.5">{item.label}</span>
               {item.badge && (
                 <span
-                  className={`absolute top-1 right-1 w-3.5 h-3.5 rounded-full text-[9px] font-bold flex items-center justify-center ${
-                    item.badgeColor || 'bg-purple-500 text-white'
+                  className={`absolute top-1 right-2 w-3 h-3 rounded-full text-[8px] font-bold flex items-center justify-center ${
+                    item.badgeColor || 'bg-[#EE7A5C] text-white'
                   }`}
                 >
                   {item.badge}
@@ -174,9 +175,9 @@ export function Sidebar() {
         })}
         <button
           onClick={() => setIsOfflineSaleModalOpen(true)}
-          className="p-2.5 rounded-2xl bg-emerald-500 text-zinc-950 font-bold"
+          className="p-2.5 rounded-full bg-[#94CCA0] text-zinc-950 font-bold"
         >
-          <PlusCircle className="w-5 h-5" />
+          <Plus className="w-5 h-5 stroke-[2.5]" />
         </button>
       </nav>
     </>

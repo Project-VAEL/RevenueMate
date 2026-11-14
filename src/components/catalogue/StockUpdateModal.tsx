@@ -148,3 +148,4 @@ export function StockUpdateModal() {
     </div>
   );
 }
+

@@ -140,3 +140,4 @@ export interface StoreMetrics {
   offlineSalesCount: number;
   staleStockCount: number;
 }
+

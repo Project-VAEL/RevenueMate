@@ -12,12 +12,12 @@ export function PriorityBadge({
   const meta = {
     HIGH: {
       label: 'HIGH PRIORITY',
-      bg: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+      bg: 'bg-[#EE7A5C]/20 text-[#EE7A5C] border-[#EE7A5C]/40',
       icon: Zap,
     },
     MEDIUM: {
       label: 'MEDIUM PRIORITY',
-      bg: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+      bg: 'bg-[#F7B955]/20 text-[#F7B955] border-[#F7B955]/40',
       icon: AlertCircle,
     },
     LOW: {

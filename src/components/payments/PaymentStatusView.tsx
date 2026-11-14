@@ -77,12 +77,12 @@ export function PaymentStatusView() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#18181C] border border-white/[0.08] rounded-3xl p-5 md:p-6 space-y-5">
+    <div className="flex flex-col h-full bg-[#191A1E] border border-white/[0.07] rounded-[32px] p-5 md:p-6 space-y-4">
       {/* 1. Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/[0.08]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-white/[0.06]">
         <div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-[#EE7A5C]/20 text-[#EE7A5C] flex items-center justify-center">
               <CreditCard className="w-4 h-4" />
             </div>
             <h2 className="text-lg md:text-xl font-black text-white tracking-tight">
@@ -106,10 +106,10 @@ export function PaymentStatusView() {
             <button
               key={f.id}
               onClick={() => setStatusFilter(f.id)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 statusFilter === f.id
-                  ? 'bg-rose-500 text-zinc-950 font-bold'
-                  : 'bg-zinc-900 border border-white/[0.06] text-zinc-300 hover:text-white'
+                  ? 'bg-white text-zinc-950 font-black'
+                  : 'bg-[#22242A] border border-white/[0.05] text-zinc-400 hover:text-white'
               }`}
             >
               {f.label}
@@ -317,3 +317,4 @@ export function PaymentStatusView() {
     </div>
   );
 }
+
