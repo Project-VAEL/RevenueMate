@@ -5,13 +5,13 @@ import { useStore } from '@/context/StoreContext';
 import { PaymentMethod } from '@/types';
 import {
   X,
-  PlusCircle,
   Banknote,
   QrCode,
   CreditCard,
   Ban,
   CheckCircle2,
   Store,
+  ArrowUpDown,
 } from 'lucide-react';
 
 export function RecordOfflineSaleModal() {
@@ -33,7 +33,6 @@ export function RecordOfflineSaleModal() {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('DIRECT_UPI_QR');
   const [notes, setNotes] = useState<string>('');
 
-  // Prepopulate modal with currently active lead or defaults
   useEffect(() => {
     if (isOfflineSaleModalOpen) {
       if (selectedLead && selectedLead.status !== 'SALE_RECORDED') {
@@ -61,7 +60,6 @@ export function RecordOfflineSaleModal() {
     }
   }, [isOfflineSaleModalOpen, selectedLead, products]);
 
-  // When selected lead changes in dropdown
   const handleLeadSelect = (id: string) => {
     setSelectedLeadId(id);
     const l = leads.find((lead) => lead.id === id);
@@ -76,7 +74,6 @@ export function RecordOfflineSaleModal() {
     }
   };
 
-  // When selected product changes in dropdown
   const handleProductSelect = (id: string) => {
     setSelectedProductId(id);
     const p = products.find((prod) => prod.id === id);
@@ -103,55 +100,52 @@ export function RecordOfflineSaleModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-[#18181C] border border-white/10 rounded-3xl w-full max-w-lg p-6 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-[#191A1E] border border-white/[0.08] rounded-[36px] w-full max-w-lg p-6 md:p-7 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200 my-8">
         {/* Close Button */}
         <button
           onClick={() => setIsOfflineSaleModalOpen(false)}
-          className="absolute top-5 right-5 text-zinc-400 hover:text-white p-1 rounded-xl bg-zinc-800"
+          className="absolute top-6 right-6 text-zinc-400 hover:text-white p-1.5 rounded-full bg-[#22242A] transition-colors"
         >
           <X className="w-4 h-4" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-2xl bg-[#94CCA0]/20 text-[#94CCA0] flex items-center justify-center font-bold">
             <Store className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-white">Record Offline In-Store Purchase</h3>
-            <p className="text-xs text-zinc-400">Cash, Counter UPI QR, or POS Terminal</p>
+            <h3 className="font-black text-base text-white tracking-tight">Record In-Store Offline Sale</h3>
+            <p className="text-xs text-zinc-400">Direct Counter UPI QR, Store Cash, or POS Swipes</p>
           </div>
         </div>
 
-        {/* CRITICAL WORKFLOW NOTIFICATION */}
-        <div className="p-3.5 mb-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 flex items-start gap-3">
-          <Ban className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-          <div className="text-xs">
-            <span className="font-bold text-white block">Automatic Follow-up Suppression:</span>
-            Recording this purchase will immediately mark the lead as{' '}
-            <strong className="text-emerald-300 font-bold">Sale Recorded</strong>, decrement stock,
-            and <strong className="text-emerald-300 font-bold">permanently cancel all pending WhatsApp follow-ups</strong> to ensure the customer is never spammed.
+        {/* Follow-up Suppression Notification */}
+        <div className="p-3.5 mb-5 rounded-2xl bg-[#94CCA0]/15 border border-[#94CCA0]/30 text-emerald-100 flex items-start gap-2.5">
+          <Ban className="w-4 h-4 text-[#94CCA0] shrink-0 mt-0.5" />
+          <div className="text-[11px] leading-relaxed">
+            <strong className="text-white block font-bold">Automatic Follow-up Suppression:</strong>
+            Logging this in-store payment immediately marks the customer as{' '}
+            <strong className="text-[#94CCA0] font-bold">Sale Recorded</strong> and{' '}
+            <strong className="text-[#94CCA0] font-bold">permanently cancels all queued WhatsApp follow-ups</strong> to avoid customer annoyance.
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3.5">
           {/* Mode Switcher */}
           <div>
-            <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1.5">
-              Customer Origin
-            </label>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => setLeadMode('EXISTING')}
-                className={`p-2.5 rounded-xl border text-xs font-bold transition-all ${
+                className={`py-2 px-3 rounded-2xl text-xs font-bold transition-all ${
                   leadMode === 'EXISTING'
-                    ? 'bg-purple-500/20 text-purple-300 border-purple-500/50'
-                    : 'bg-zinc-900 border-white/[0.08] text-zinc-400'
+                    ? 'bg-white text-zinc-950 shadow-sm'
+                    : 'bg-[#141518] text-zinc-400 hover:text-white'
                 }`}
               >
-                Existing Lead / Enquiry
+                Existing Lead
               </button>
               <button
                 type="button"
@@ -160,13 +154,13 @@ export function RecordOfflineSaleModal() {
                   setCustomerName('Walk-in Customer');
                   setCustomerPhone('');
                 }}
-                className={`p-2.5 rounded-xl border text-xs font-bold transition-all ${
+                className={`py-2 px-3 rounded-2xl text-xs font-bold transition-all ${
                   leadMode === 'WALK_IN'
-                    ? 'bg-purple-500/20 text-purple-300 border-purple-500/50'
-                    : 'bg-zinc-900 border-white/[0.08] text-zinc-400'
+                    ? 'bg-white text-zinc-950 shadow-sm'
+                    : 'bg-[#141518] text-zinc-400 hover:text-white'
                 }`}
               >
-                New Walk-In Shopper
+                New In-Store Walk-In
               </button>
             </div>
           </div>
@@ -174,19 +168,19 @@ export function RecordOfflineSaleModal() {
           {/* Existing Lead Selector */}
           {leadMode === 'EXISTING' && (
             <div>
-              <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
-                Select Lead to Convert
+              <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+                Select Customer Lead
               </label>
               <select
                 value={selectedLeadId}
                 onChange={(e) => handleLeadSelect(e.target.value)}
-                className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                className="w-full bg-[#141518] border border-white/10 rounded-2xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#94CCA0]"
                 required
               >
                 {leads
                   .filter((l) => l.status !== 'SALE_RECORDED')
                   .map((l) => (
-                    <option key={l.id} value={l.id}>
+                    <option key={l.id} value={l.id} className="bg-zinc-900 text-white">
                       {l.name} ({l.phone}) - {l.interestedProductName || 'Ethnic Wear'}
                     </option>
                   ))}
@@ -195,9 +189,9 @@ export function RecordOfflineSaleModal() {
           )}
 
           {/* Customer Name & Phone */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div>
-              <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
+              <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
                 Customer Name
               </label>
               <input
@@ -205,37 +199,37 @@ export function RecordOfflineSaleModal() {
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 placeholder="e.g. Vikram Mehta"
-                className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
+                className="w-full bg-[#141518] border border-white/10 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#94CCA0]"
                 required
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
-                Phone Number (Optional)
+              <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+                Phone Number
               </label>
               <input
                 type="text"
                 value={customerPhone}
                 onChange={(e) => setCustomerPhone(e.target.value)}
                 placeholder="+91 98200 12345"
-                className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
+                className="w-full bg-[#141518] border border-white/10 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#94CCA0]"
               />
             </div>
           </div>
 
           {/* Product Selector */}
           <div>
-            <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
+            <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
               Purchased Product / SKU
             </label>
             <select
               value={selectedProductId}
               onChange={(e) => handleProductSelect(e.target.value)}
-              className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-purple-500"
+              className="w-full bg-[#141518] border border-white/10 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#94CCA0]"
               required
             >
               {products.map((p) => (
-                <option key={p.id} value={p.id}>
+                <option key={p.id} value={p.id} className="bg-zinc-900 text-white">
                   {p.name} (SKU: {p.sku}) — ₹{p.price.toLocaleString('en-IN')}{' '}
                   {p.stockQuantity !== null ? `[${p.stockQuantity} in stock]` : '[Stock Unknown]'}
                 </option>
@@ -243,43 +237,31 @@ export function RecordOfflineSaleModal() {
             </select>
           </div>
 
-          {/* Final Amount */}
+          {/* Final Recorded Amount */}
           <div>
-            <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
-              Final Recorded Price (₹ INR)
+            <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+              Final In-Store Amount (₹ INR)
             </label>
             <input
               type="number"
               min="1"
               value={amount}
               onChange={(e) => setAmount(parseInt(e.target.value, 10) || 0)}
-              className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3.5 py-2.5 text-sm font-bold text-white focus:outline-none focus:border-emerald-500"
+              className="w-full bg-[#141518] border border-white/10 rounded-2xl px-3.5 py-2.5 text-base font-black text-white focus:outline-none focus:border-[#94CCA0] font-mono"
               required
             />
           </div>
 
           {/* Payment Method Selector */}
           <div>
-            <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1.5">
-              In-Store Payment Mode
+            <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1.5">
+              Payment Method
             </label>
             <div className="grid grid-cols-3 gap-2">
               {[
-                {
-                  id: 'DIRECT_UPI_QR' as PaymentMethod,
-                  label: 'Counter UPI QR',
-                  icon: QrCode,
-                },
-                {
-                  id: 'CASH' as PaymentMethod,
-                  label: 'Store Cash',
-                  icon: Banknote,
-                },
-                {
-                  id: 'POS_CARD' as PaymentMethod,
-                  label: 'POS Terminal',
-                  icon: CreditCard,
-                },
+                { id: 'DIRECT_UPI_QR' as PaymentMethod, label: 'Counter UPI QR', icon: QrCode },
+                { id: 'CASH' as PaymentMethod, label: 'Store Cash', icon: Banknote },
+                { id: 'POS_CARD' as PaymentMethod, label: 'POS Terminal', icon: CreditCard },
               ].map((m) => {
                 const Icon = m.icon;
                 const isSelected = paymentMethod === m.id;
@@ -288,46 +270,32 @@ export function RecordOfflineSaleModal() {
                     type="button"
                     key={m.id}
                     onClick={() => setPaymentMethod(m.id)}
-                    className={`p-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
+                    className={`p-2.5 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition-all ${
                       isSelected
-                        ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/60 shadow-sm'
-                        : 'bg-zinc-900 border-white/[0.06] text-zinc-400 hover:text-white'
+                        ? 'bg-[#94CCA0]/20 text-[#94CCA0] border-[#94CCA0]/60 shadow-sm'
+                        : 'bg-[#141518] border-white/[0.05] text-zinc-400 hover:text-white'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
-                    <span>{m.label}</span>
+                    <span className="text-[11px]">{m.label}</span>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Notes */}
-          <div>
-            <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider mb-1">
-              Receipt Note / Internal Memo
-            </label>
-            <input
-              type="text"
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder="e.g. Scanned counter QR code, soundbox announced payment."
-              className="w-full bg-[#121214] border border-white/10 rounded-2xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-purple-500"
-            />
-          </div>
-
           {/* Actions */}
-          <div className="pt-3 flex items-center justify-end gap-2 border-t border-white/[0.08]">
+          <div className="pt-3 flex items-center justify-end gap-2 border-t border-white/[0.06]">
             <button
               type="button"
               onClick={() => setIsOfflineSaleModalOpen(false)}
-              className="px-4 py-2.5 rounded-2xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 text-xs font-semibold"
+              className="px-4 py-2.5 rounded-2xl bg-[#22242A] text-zinc-300 hover:bg-zinc-800 text-xs font-bold"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 text-xs font-black transition-colors flex items-center gap-1.5 shadow-md"
+              className="px-5 py-2.5 rounded-2xl bg-[#94CCA0] hover:bg-[#A5DDB1] text-zinc-950 text-xs font-black transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>Confirm &amp; Suppress Follow-ups</span>
@@ -338,4 +306,3 @@ export function RecordOfflineSaleModal() {
     </div>
   );
 }
-
