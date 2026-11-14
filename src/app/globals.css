@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #121214;
+    --card-dark: #18181C;
+    --card-dark-hover: #202026;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(255, 255, 255, 0.16);
+
+    /* Vibrant pastels & neo-brutalist accents */
+    --accent-purple: #8B5CF6;
+    --accent-purple-light: #A78BFA;
+    --accent-purple-dim: rgba(139, 92, 246, 0.15);
+
+    --accent-yellow: #F59E0B;
+    --accent-yellow-light: #FBBF24;
+    --accent-yellow-dim: rgba(245, 158, 11, 0.15);
+
+    --accent-coral: #FB7185;
+    --accent-coral-light: #FDA4AF;
+    --accent-coral-dim: rgba(251, 113, 133, 0.15);
+
+    --accent-mint: #10B981;
+    --accent-mint-light: #34D399;
+    --accent-mint-dim: rgba(16, 185, 129, 0.15);
+
+    --accent-cyan: #06B6D4;
+    --accent-cyan-light: #67E8F9;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: #F8FAFC;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom rounded pill scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141418;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E2E38;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #474758;
+}
