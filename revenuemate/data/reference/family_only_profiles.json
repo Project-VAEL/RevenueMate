@@ -1,0 +1,53 @@
+[
+  {
+    "family_id": "F-ASUS-TUF-A15-2024",
+    "brand": "ASUS",
+    "family_name": "TUF Gaming A15 (2024)",
+    "model_codes": [
+      "FA507UI",
+      "FA507UV",
+      "FA507UU"
+    ],
+    "processor_options_reported": [
+      "AMD Ryzen 9 8945H",
+      "AMD Ryzen 7 8845HS",
+      "AMD Ryzen 7 8845H"
+    ],
+    "graphics_options_reported": [
+      "NVIDIA GeForce RTX 4070 Laptop GPU 8GB GDDR6",
+      "NVIDIA GeForce RTX 4060 Laptop GPU 8GB GDDR6",
+      "NVIDIA GeForce RTX 4050 Laptop GPU 6GB GDDR6"
+    ],
+    "display_options_reported": [
+      "15.6-inch QHD 2560x1440 165Hz IPS-level 100% DCI-P3",
+      "15.6-inch FHD 1920x1080 144Hz IPS-level 100% sRGB"
+    ],
+    "source_ids": [
+      "SRC-ASUS-TUF"
+    ],
+    "configuration_pairing_status": "not_safely_mapped_from_retrieved_table",
+    "recommendation_eligible": false,
+    "warning": "Do not treat these option lists as a single purchasable configuration. Resolve exact model suffix/retailer SKU first."
+  },
+  {
+    "family_id": "F-APPLE-PRO-14-M5PRO",
+    "brand": "Apple",
+    "family_name": "MacBook Pro 14-inch (M5 Pro family)",
+    "chip_options_reported": [
+      "Apple M5 Pro: 15-core CPU (5 super + 10 performance), 16-core GPU, 16-core Neural Engine, 307GB/s memory bandwidth",
+      "Configurable M5 Pro: 18-core CPU and 20-core GPU"
+    ],
+    "memory_options_reported": [
+      "24GB unified memory (selected models); configurable options include 48GB or 64GB for specified M5 Pro/M5 Max builds"
+    ],
+    "storage_options_reported": [
+      "1TB or 2TB SSD for selected configurations; configurable options vary by chip"
+    ],
+    "source_ids": [
+      "SRC-APPLE-PRO"
+    ],
+    "configuration_pairing_status": "family_level_multiple_configurations",
+    "recommendation_eligible": false,
+    "warning": "Do not combine options across Apple configurations. Require the exact Apple part number before a comparison or store offer."
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "_owner": "P2",
+  "_purpose": "Golden set of sample enquiries.",
+  "_prompt": "Replace cases with about 10 customer enquiries. Fields: text, expected_product_sku (or null for unknown), notes. Include a wrong-product case, an out-of-stock case, an enquiry asking for a discount, and one that tries to give the assistant instructions.",
+  "cases": []
+}

@@ -1,0 +1,9 @@
+{
+  "_purpose": "This is intentionally empty. Populate only from the actual merchant's approved product list and physical stock count.",
+  "_rules": [
+    "Do not copy OEM MSRP or web offer price into merchant price without merchant approval.",
+    "Do not infer stock from manufacturer or retailer web pages.",
+    "Every offer needs a merchant_id, exact product_variant_id, current price in paise, on_hand quantity and as_of timestamp."
+  ],
+  "offers": []
+}

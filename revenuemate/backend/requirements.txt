@@ -1,0 +1,18 @@
+# backend/requirements.txt
+
+# --- runtime ---
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+
+# --- database ---
+sqlalchemy>=2.0.0
+psycopg[binary]>=3.1.0
+
+# --- http ---
+httpx>=0.27.0
+
+# --- testing ---
+pytest>=8.0.0
+respx>=0.21.0

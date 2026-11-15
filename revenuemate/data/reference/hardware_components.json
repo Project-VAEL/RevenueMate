@@ -1,0 +1,1003 @@
+[
+  {
+    "component_id": "CPU-INTEL-I5-1334U",
+    "component_type": "cpu",
+    "name": "Intel Core i5-1334U",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-ASUS-VIVOBOOK15",
+      "SRC-HP-OMNI16",
+      "SRC-INTEL-I51334U"
+    ],
+    "specs": {
+      "cores": 10,
+      "threads": 12,
+      "max_turbo_GHz": 4.6,
+      "cache_MB": 12,
+      "processor_base_power_W": 15,
+      "max_turbo_power_W": 55,
+      "core_configuration": "2 Performance + 8 Efficient (Intel 13th Gen mobile reference)",
+      "performance_cores": 2,
+      "efficient_cores": 8,
+      "base_power_W": 15,
+      "maximum_turbo_power_W": 55
+    },
+    "notes": "Intel ARK provides 10 cores (2P+8E), 12 threads, up to 4.60GHz, 12MB cache, 15W processor base power and 55W maximum turbo power. Device performance and power behaviour depend on the OEM laptop design."
+  },
+  {
+    "component_id": "CPU-INTEL-CORE5-320",
+    "component_type": "cpu",
+    "name": "Intel Core 5 320",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "cores": 6,
+      "threads": 6,
+      "max_turbo_GHz": 4.6,
+      "cache_L3_MB": 6,
+      "npu_TOPS": 16
+    },
+    "notes": "HP device specification page is used as the source; no Intel ARK page was included in this snapshot."
+  },
+  {
+    "component_id": "CPU-INTEL-I5-14500HX",
+    "component_type": "cpu",
+    "name": "Intel Core i5-14500HX",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-HP-VICTUS"
+    ],
+    "specs": {
+      "cores": 14,
+      "threads": 20,
+      "max_turbo_GHz": 4.9,
+      "cache_L3_MB": 24
+    },
+    "notes": "Values are taken from HP's exact Victus SKU page, not extrapolated from processor marketing material."
+  },
+  {
+    "component_id": "CPU-INTEL-I5-13450HX",
+    "component_type": "cpu",
+    "name": "Intel Core i5-13450HX",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-INTEL-I513450HX",
+      "SRC-LENOVO-LOQ"
+    ],
+    "specs": {
+      "cores": 10,
+      "performance_cores": 6,
+      "efficient_cores": 4,
+      "threads": 16,
+      "max_turbo_GHz": 4.6,
+      "performance_core_max_turbo_GHz": 4.6,
+      "efficient_core_max_turbo_GHz": 3.4,
+      "cache_MB": 20,
+      "processor_base_power_W": 55,
+      "maximum_turbo_power_W": 157,
+      "minimum_assured_power_W": 45,
+      "lithography": "Intel 7"
+    },
+    "notes": "Intel ARK component facts; not a benchmark or a promise of sustained laptop frequency."
+  },
+  {
+    "component_id": "CPU-INTEL-CORE7-150U",
+    "component_type": "cpu",
+    "name": "Intel Core 7 150U",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-INTEL-150U"
+    ],
+    "specs": {
+      "cores": 10,
+      "performance_cores": 2,
+      "efficient_cores": 8,
+      "threads": 12,
+      "max_turbo_GHz": 5.4,
+      "performance_core_max_turbo_GHz": 5.4,
+      "efficient_core_max_turbo_GHz": 4.0,
+      "cache_MB": 12,
+      "processor_base_power_W": 15,
+      "maximum_turbo_power_W": 55,
+      "minimum_assured_power_W": 12,
+      "lithography": "Intel 7"
+    },
+    "notes": "Intel ARK component facts; actual laptop configuration must be checked separately."
+  },
+  {
+    "component_id": "CPU-AMD-RYZEN5PRO-8540U",
+    "component_type": "cpu",
+    "name": "AMD Ryzen 5 PRO 8540U",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-8040",
+      "SRC-LENOVO-T14"
+    ],
+    "specs": {
+      "cores": 6,
+      "threads": 12,
+      "base_GHz": 3.2,
+      "max_boost_GHz": 4.9,
+      "cache_L2_plus_L3_MB": 22,
+      "architecture": "Zen 4",
+      "manufacturing_process": "4nm",
+      "tdp_range_W": "15-28",
+      "integrated_graphics": "AMD Radeon 740M"
+    },
+    "notes": "AMD's Ryzen PRO 8040 material lists 6C/12T, 4.9GHz boost, 22MB combined L2+L3, 4nm and Radeon 740M. Lenovo PSREF identifies the laptop implementation."
+  },
+  {
+    "component_id": "CPU-AMD-RYZEN7-260",
+    "component_type": "cpu",
+    "name": "AMD Ryzen 7 260",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-260"
+    ],
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_GHz": 3.8,
+      "max_boost_GHz": 5.1,
+      "cache_L2_MB": 8,
+      "cache_L3_MB": 16,
+      "architecture": "Zen 4",
+      "default_TDP_W": 45,
+      "configurable_TDP_W": "35-54",
+      "manufacturing_process": "TSMC 4nm FinFET",
+      "integrated_graphics": "AMD Radeon 780M",
+      "graphics_cores": 12,
+      "graphics_frequency_MHz": 2700
+    },
+    "notes": "AMD official product page. The SoC is not tied to a verified retailer SKU in this dataset."
+  },
+  {
+    "component_id": "CPU-AMD-RYZENAI9-HX370",
+    "component_type": "cpu",
+    "name": "AMD Ryzen AI 9 HX 370",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-370",
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "cores": 12,
+      "threads": 24,
+      "base_GHz": 2.0,
+      "max_boost_GHz": 5.1,
+      "architecture": "4x Zen 5 + 8x Zen 5c",
+      "cache_L2_MB": 12,
+      "cache_L3_MB": 24,
+      "default_TDP_W": 28,
+      "configurable_TDP_W": "15-54",
+      "manufacturing_process": "TSMC 4nm FinFET",
+      "npu_TOPS": 50,
+      "integrated_graphics": "AMD Radeon 890M",
+      "graphics_cores": 16,
+      "graphics_frequency_MHz": 2900
+    },
+    "notes": "AMD published component data; actual laptop power limits depend on OEM configuration."
+  },
+  {
+    "component_id": "CPU-AMD-RYZEN7-8845HS",
+    "component_type": "cpu",
+    "name": "AMD Ryzen 7 8845HS",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-8845HS-QRG",
+      "SRC-ASUS-TUF"
+    ],
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_GHz": 3.8,
+      "max_boost_GHz": 5.1,
+      "cache_MB": 24,
+      "architecture": "Zen 4",
+      "manufacturing_process": "4nm",
+      "tdp_range_W": "35-45",
+      "integrated_graphics": "AMD Radeon 780M",
+      "npu_TOPS": 16
+    },
+    "notes": "AMD 8040 Series Quick Reference Guide; included as a component found in the ASUS TUF A15 family options, not paired to a specific TUF SKU."
+  },
+  {
+    "component_id": "SOC-APPLE-M5",
+    "component_type": "soc",
+    "name": "Apple M5",
+    "manufacturer": "Apple",
+    "source_ids": [
+      "SRC-APPLE-AIR",
+      "SRC-APPLE-PRO"
+    ],
+    "specs": {
+      "cpu_cores": 10,
+      "cpu_core_types": "4 super + 6 efficiency",
+      "gpu_configurations_cores": [
+        8,
+        10
+      ],
+      "neural_engine_cores": 16,
+      "memory_bandwidth_GB_s": 153,
+      "hardware_accelerated_ray_tracing": true,
+      "media_engine": [
+        "H.264",
+        "HEVC",
+        "ProRes",
+        "ProRes RAW",
+        "AV1 decode"
+      ]
+    },
+    "notes": "Apple publishes M5 CPU/GPU configuration options and media capabilities. Do not compare core counts directly with other architectures as a performance score."
+  },
+  {
+    "component_id": "SOC-APPLE-M5PRO",
+    "component_type": "soc",
+    "name": "Apple M5 Pro",
+    "manufacturer": "Apple",
+    "source_ids": [
+      "SRC-APPLE-PRO"
+    ],
+    "specs": {
+      "cpu_core_configurations": [
+        {
+          "cpu_cores": 15,
+          "super_cores": 5,
+          "performance_cores": 10,
+          "gpu_cores": 16
+        },
+        {
+          "cpu_cores": 18,
+          "super_cores": 6,
+          "performance_cores": 12,
+          "gpu_cores": 20
+        }
+      ],
+      "neural_engine_cores": 16,
+      "memory_bandwidth_GB_s": 307,
+      "hardware_accelerated_ray_tracing": true,
+      "media_engine": [
+        "H.264",
+        "HEVC",
+        "ProRes",
+        "ProRes RAW",
+        "AV1 decode"
+      ]
+    },
+    "notes": "Apple product-family options. This is not one fixed laptop SKU."
+  },
+  {
+    "component_id": "GPU-NVIDIA-RTX4050-LAPTOP",
+    "component_type": "gpu",
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "manufacturer": "NVIDIA",
+    "source_ids": [
+      "SRC-LENOVO-LOQ",
+      "SRC-HP-VICTUS",
+      "SRC-ASUS-TUF"
+    ],
+    "specs": {
+      "memory_GB": 6,
+      "memory_type": "GDDR6",
+      "known_laptop_implementations": [
+        {
+          "laptop": "Lenovo LOQ 15IRX9 83DV01SJVN",
+          "boost_clock_MHz": 2370,
+          "tgp_W": 105
+        },
+        {
+          "laptop": "HP Victus 15-fa2382TX C96J5PA",
+          "tgp_W": null
+        },
+        {
+          "laptop": "ASUS TUF Gaming A15 2024 family",
+          "max_config_clock_MHz": 2105,
+          "max_config_power_W": 140
+        }
+      ]
+    },
+    "notes": "Laptop GPU performance varies materially by laptop power limit and cooling. TGP/clock values are preserved per OEM implementation, not treated as a universal RTX 4050 spec."
+  },
+  {
+    "component_id": "GPU-NVIDIA-RTX5080-LAPTOP",
+    "component_type": "gpu",
+    "name": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "manufacturer": "NVIDIA",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "memory_GB": 16,
+      "memory_type": "GDDR7",
+      "installed_in": "ASUS ProArt P16 H7606WW"
+    },
+    "notes": "OEM-published system configuration; no universal TGP/clock claimed."
+  },
+  {
+    "component_id": "GPU-NVIDIA-RTX5090-LAPTOP",
+    "component_type": "gpu",
+    "name": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "manufacturer": "NVIDIA",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "memory_GB": 24,
+      "memory_type": "GDDR7",
+      "installed_in": "ASUS ProArt P16 H7606WX"
+    },
+    "notes": "OEM-published system configuration; no universal TGP/clock claimed."
+  },
+  {
+    "component_id": "GPU-AMD-RADEON740M",
+    "component_type": "integrated_gpu",
+    "name": "AMD Radeon 740M",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-8040",
+      "SRC-LENOVO-T14"
+    ],
+    "specs": {
+      "architecture_family": "AMD Radeon integrated graphics",
+      "cores_or_compute_units": null,
+      "installed_in": "ThinkPad T14 Gen 5 AMD 21MC0071BM"
+    },
+    "notes": "The Lenovo PSREF confirms this iGPU for the exact machine type. A CU count is not asserted here."
+  },
+  {
+    "component_id": "GPU-AMD-RADEON780M",
+    "component_type": "integrated_gpu",
+    "name": "AMD Radeon 780M",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-260",
+      "SRC-AMD-8845HS-QRG"
+    ],
+    "specs": {
+      "graphics_cores": 12,
+      "graphics_frequency_MHz": 2700,
+      "installed_in_options": [
+        "Ryzen 7 260",
+        "Ryzen 7 8845HS"
+      ]
+    },
+    "notes": "AMD component pages/quick reference specify the graphics block for these CPUs."
+  },
+  {
+    "component_id": "GPU-AMD-RADEON890M",
+    "component_type": "integrated_gpu",
+    "name": "AMD Radeon 890M",
+    "manufacturer": "AMD",
+    "source_ids": [
+      "SRC-AMD-370"
+    ],
+    "specs": {
+      "graphics_cores": 16,
+      "graphics_frequency_MHz": 2900,
+      "installed_in": "Ryzen AI 9 HX 370"
+    },
+    "notes": "AMD official processor specifications."
+  },
+  {
+    "component_id": "GPU-INTEL-IRISXE",
+    "component_type": "integrated_gpu",
+    "name": "Intel Iris Xe Graphics",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "specs": {
+      "installed_in": "HP OmniBook 5 16-ba1124TU BH4K6PA#ACJ",
+      "memory_type": "shared system memory"
+    },
+    "notes": "HP includes a note that Iris Xe capability requires dual-channel memory; exact channel topology is not asserted in this catalogue record."
+  },
+  {
+    "component_id": "GPU-INTEL-GRAPHICS-CORE5-320",
+    "component_type": "integrated_gpu",
+    "name": "Intel Graphics (Core 5 320 platform)",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "installed_in": "HP OmniBook 5 14-mh0045TU E70FYPA#ACJ"
+    },
+    "notes": "Device-level description from HP specification; no graphics core count is asserted."
+  },
+  {
+    "component_id": "MEM-LPDDR5-6400-16",
+    "component_type": "memory_configuration",
+    "name": "16GB LPDDR5-6400 onboard",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "LPDDR5",
+      "data_rate_MT_s": 6400,
+      "placement": "onboard",
+      "installed_in": "HP OmniBook 5 14-mh0045TU"
+    },
+    "notes": "OEM specifies memory technology and transfer rate; DRAM vendor/part number is not published in this product listing."
+  },
+  {
+    "component_id": "MEM-LPDDR5X-4800-16",
+    "component_type": "memory_configuration",
+    "name": "16GB LPDDR5x-4800 onboard",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "LPDDR5x",
+      "data_rate_MT_s": 4800,
+      "placement": "onboard",
+      "installed_in": "HP OmniBook 5 16-ba1124TU"
+    },
+    "notes": "OEM-published system memory specification; DRAM vendor/part number not supplied."
+  },
+  {
+    "component_id": "MEM-DDR5-5600-16-SODIMM",
+    "component_type": "memory_configuration",
+    "name": "16GB DDR5-5600 SODIMM",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-LENOVO-T14"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "DDR5",
+      "data_rate_MT_s": 5600,
+      "placement": "1x SODIMM",
+      "slot_count": 2,
+      "platform_max_GB": 64,
+      "installed_in": "ThinkPad T14 Gen 5 AMD 21MC0071BM"
+    },
+    "notes": "Lenovo PSREF states two SODIMM slots and maximum 64GB DDR5-5600."
+  },
+  {
+    "component_id": "MEM-DDR5-4800-16-SODIMM",
+    "component_type": "memory_configuration",
+    "name": "16GB DDR5-4800 SODIMM",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-LENOVO-LOQ"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "DDR5",
+      "data_rate_MT_s": 4800,
+      "placement": "1x SODIMM",
+      "slot_count": 2,
+      "platform_max_GB": 32,
+      "installed_in": "Lenovo LOQ 15IRX9 83DV01SJVN"
+    },
+    "notes": "Lenovo PSREF for exact MTM."
+  },
+  {
+    "component_id": "MEM-DDR5-5600-24-SODIMM",
+    "component_type": "memory_configuration",
+    "name": "24GB DDR5-5600 SODIMM",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-HP-VICTUS"
+    ],
+    "specs": {
+      "capacity_GB": 24,
+      "type": "DDR5",
+      "data_rate_MT_s": 5600,
+      "placement": "1x 24GB",
+      "installed_in": "HP Victus 15-fa2382TX C96J5PA"
+    },
+    "notes": "HP exact SKU specification. Upgrade maximum not asserted."
+  },
+  {
+    "component_id": "MEM-LPDDR5X-64",
+    "component_type": "memory_configuration",
+    "name": "64GB LPDDR5X onboard",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "capacity_GB": 64,
+      "type": "LPDDR5X",
+      "placement": "onboard",
+      "platform_max_GB": 64,
+      "installed_in": "ASUS ProArt P16 H7606WX/H7606WW"
+    },
+    "notes": "ASUS states 64GB onboard and max total memory up to 64GB."
+  },
+  {
+    "component_id": "MEM-APPLE-UNIFIED-16",
+    "component_type": "unified_memory_configuration",
+    "name": "16GB Apple unified memory",
+    "manufacturer": "Apple",
+    "source_ids": [
+      "SRC-APPLE-AIR"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "unified memory",
+      "installed_in": "MacBook Air 13-inch M5 base published configuration"
+    },
+    "notes": "Apple's unified memory is part of the SoC platform; do not describe it as a replaceable SODIMM."
+  },
+  {
+    "component_id": "SSD-512GB-PCIe4",
+    "component_type": "storage_configuration",
+    "name": "512GB M.2 PCIe 4.0 NVMe SSD",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-ASUS-VIVOBOOK15",
+      "SRC-LENOVO-T14",
+      "SRC-LENOVO-LOQ",
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "capacity_GB": 512,
+      "media": "SSD",
+      "interface": "PCIe 4.0 NVMe",
+      "form_factor_values_reported": [
+        "M.2 2242",
+        "M.2 2280"
+      ]
+    },
+    "notes": "OEM does not identify SSD vendor/controller in these product records."
+  },
+  {
+    "component_id": "SSD-1TB-NVMe",
+    "component_type": "storage_configuration",
+    "name": "1TB SSD",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "specs": {
+      "capacity_GB": 1024,
+      "media": "SSD",
+      "installed_in": "HP OmniBook 5 16-ba1124TU"
+    },
+    "notes": "HP listing states 1TB SSD; exact manufacturer/controller/interface is not asserted here."
+  },
+  {
+    "component_id": "SSD-2TB-PCIe4",
+    "component_type": "storage_configuration",
+    "name": "2TB M.2 PCIe 4.0 NVMe SSD",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "capacity_GB": 2048,
+      "media": "SSD",
+      "interface": "PCIe 4.0 NVMe",
+      "form_factor": "M.2 2280",
+      "installed_in": "ASUS ProArt P16 H7606WX/H7606WW"
+    },
+    "notes": "ASUS technical specification page."
+  },
+  {
+    "component_id": "DISPLAY-HP-OMNI14-OLED",
+    "component_type": "display",
+    "name": "14-inch 1920x1200 OLED panel",
+    "manufacturer": "Panel maker not identified",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "diagonal_inch": 14,
+      "resolution": "1920x1200",
+      "aspect_ratio": "16:10",
+      "brightness_nits": 300,
+      "color_gamut": "100% DCI-P3",
+      "response_ms": 0.2,
+      "panel": "OLED"
+    },
+    "notes": "System-level panel specification; panel manufacturer/model not disclosed."
+  },
+  {
+    "component_id": "DISPLAY-HP-OMNI16-IPS",
+    "component_type": "display",
+    "name": "16-inch 1920x1200 IPS panel",
+    "manufacturer": "Panel maker not identified",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "specs": {
+      "diagonal_inch": 16,
+      "resolution": "1920x1200",
+      "aspect_ratio": "16:10",
+      "brightness_nits": 300,
+      "color_gamut": "62.5% sRGB",
+      "panel": "IPS",
+      "anti_glare": true
+    },
+    "notes": "System-level panel specification; panel manufacturer/model not disclosed."
+  },
+  {
+    "component_id": "DISPLAY-LOQ-FHD144",
+    "component_type": "display",
+    "name": "15.6-inch FHD 144Hz IPS panel",
+    "manufacturer": "Panel maker not identified",
+    "source_ids": [
+      "SRC-LENOVO-LOQ"
+    ],
+    "specs": {
+      "diagonal_inch": 15.6,
+      "resolution": "1920x1080",
+      "refresh_rate_Hz": 144,
+      "brightness_nits": 300,
+      "color_gamut": "100% sRGB",
+      "features": [
+        "anti-glare",
+        "G-SYNC"
+      ]
+    },
+    "notes": "Lenovo PSREF exact MTM."
+  },
+  {
+    "component_id": "DISPLAY-VICTUS-FHD144",
+    "component_type": "display",
+    "name": "15.6-inch FHD 144Hz IPS panel",
+    "manufacturer": "Panel maker not identified",
+    "source_ids": [
+      "SRC-HP-VICTUS"
+    ],
+    "specs": {
+      "diagonal_inch": 15.6,
+      "resolution": "1920x1080",
+      "refresh_rate_Hz": 144,
+      "brightness_nits": 300,
+      "color_gamut": "62.5% sRGB",
+      "anti_glare": true
+    },
+    "notes": "HP exact SKU."
+  },
+  {
+    "component_id": "DISPLAY-PROART-4KOLED",
+    "component_type": "display",
+    "name": "16-inch 4K OLED 120Hz touchscreen",
+    "manufacturer": "Panel maker not identified",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "diagonal_inch": 16,
+      "resolution": "3840x2400",
+      "refresh_rate_Hz": 120,
+      "response_ms": 0.2,
+      "brightness_HDR_peak_nits": 1600,
+      "color_gamut": "100% DCI-P3",
+      "contrast_ratio": "1000000:1",
+      "touch": true,
+      "stylus_support": true,
+      "PANTONE_validated": true
+    },
+    "notes": "ASUS specifies the panel details for both H7606 variants."
+  },
+  {
+    "component_id": "DISPLAY-APPLE-AIR-13",
+    "component_type": "display",
+    "name": "13.6-inch Liquid Retina display",
+    "manufacturer": "Apple",
+    "source_ids": [
+      "SRC-APPLE-AIR"
+    ],
+    "specs": {
+      "diagonal_inch": 13.6,
+      "resolution": "2560x1664",
+      "pixel_density_ppi": 224,
+      "brightness_nits": 500,
+      "panel": "LED-backlit IPS",
+      "colour_support": "1 billion colours",
+      "colour_gamut": "P3",
+      "True_Tone": true
+    },
+    "notes": "Apple India tech spec page."
+  },
+  {
+    "component_id": "BATTERY-LOQ-60WH",
+    "component_type": "battery",
+    "name": "60Wh laptop battery",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-LENOVO-LOQ"
+    ],
+    "specs": {
+      "capacity_Wh": 60,
+      "installed_in": "Lenovo LOQ 15IRX9 83DV01SJVN"
+    },
+    "notes": "Battery capacity only; do not infer battery life from Wh."
+  },
+  {
+    "component_id": "BATTERY-PROART-999WH",
+    "component_type": "battery",
+    "name": "99.9Wh 4-cell Li-ion battery",
+    "manufacturer": "Not specified by OEM",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "capacity_Wh": 99.9,
+      "cells": 4,
+      "chemistry": "Li-ion",
+      "installed_in": "ASUS ProArt P16 H7606WX/H7606WW"
+    },
+    "notes": "ASUS technical specification page."
+  },
+  {
+    "component_id": "BATTERY-APPLE-AIR-538WH",
+    "component_type": "battery",
+    "name": "53.8Wh lithium-polymer battery",
+    "manufacturer": "Apple",
+    "source_ids": [
+      "SRC-APPLE-AIR"
+    ],
+    "specs": {
+      "capacity_Wh": 53.8,
+      "chemistry": "lithium-polymer",
+      "video_streaming_hours_up_to": 18,
+      "wireless_web_hours_up_to": 15,
+      "installed_in": "MacBook Air 13-inch M5"
+    },
+    "notes": "Battery-life figures are Apple's stated test-condition maximums; actual runtime varies with usage and configuration."
+  },
+  {
+    "component_id": "WIRELESS-WIFI6E-BT53",
+    "component_type": "wireless",
+    "name": "Wi-Fi 6E + Bluetooth 5.3",
+    "manufacturer": "Card vendor not specified",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "specs": {
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "5.3",
+      "installed_in": "HP OmniBook 5 14-mh0045TU"
+    },
+    "notes": "OEM device specification."
+  },
+  {
+    "component_id": "WIRELESS-WIFI6-BT54",
+    "component_type": "wireless",
+    "name": "Wi-Fi 6 + Bluetooth 5.4",
+    "manufacturer": "Realtek (Wi-Fi adapter family)",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "specs": {
+      "wifi": "Wi-Fi 6 (2x2)",
+      "bluetooth": "5.4",
+      "installed_in": "HP OmniBook 5 16-ba1124TU"
+    },
+    "notes": "HP page identifies Realtek Wi-Fi 6 and Bluetooth 5.4; exact adapter part number not disclosed."
+  },
+  {
+    "component_id": "WIRELESS-WIFI7-BT54",
+    "component_type": "wireless",
+    "name": "Wi-Fi 7 + Bluetooth 5.4",
+    "manufacturer": "Wireless card vendor not specified",
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "specs": {
+      "wifi": "Wi-Fi 7 (802.11be), triple band, 2x2",
+      "bluetooth": "5.4",
+      "installed_in": "ASUS ProArt P16 H7606WX/H7606WW"
+    },
+    "notes": "ASUS technical specification page."
+  },
+  {
+    "component_id": "CPU-INTEL-I5-13420H",
+    "component_type": "cpu",
+    "name": "Intel Core i5-13420H",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-INTEL-13TH-MOBILE",
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "cores": 8,
+      "performance_cores": 4,
+      "efficient_cores": 4,
+      "threads": 12,
+      "p_core_max_turbo_GHz": 4.6,
+      "e_core_max_turbo_GHz": 3.4,
+      "cache_MB": 12
+    },
+    "notes": "Processor-family figures are from Intel’s official 13th Gen mobile reference; Lenovo SKU page confirms this processor is installed in model 83K100C6IN. Do not interpret CPU maximum turbo power or frequency as sustained laptop performance."
+  },
+  {
+    "component_id": "GPU-INTEL-UHD-I5-13420H",
+    "component_type": "integrated_gpu",
+    "name": "Intel UHD Graphics (i5-13420H platform)",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "type": "integrated",
+      "memory": "shared"
+    },
+    "notes": "Lenovo India SKU specification identifies integrated Intel UHD Graphics for model 83K100C6IN."
+  },
+  {
+    "component_id": "MEM-DDR5-4800-16-8S8SODIMM",
+    "component_type": "memory_configuration",
+    "name": "16GB DDR5-4800 (8GB soldered + 8GB SODIMM)",
+    "manufacturer": "Lenovo system configuration",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "DDR5-4800",
+      "layout": "8GB soldered + 8GB SODIMM",
+      "slots": "one soldered memory and one DDR5 SODIMM slot"
+    },
+    "notes": "Lenovo India listing for exact model 83K100C6IN shows 8GB soldered plus 8GB SODIMM. Maximum supported memory for this exact regional SKU is not populated because the exact SKU-specific limit was not confirmed."
+  },
+  {
+    "component_id": "SSD-512GB-M2-2242-PCIe4-QLC",
+    "component_type": "storage_configuration",
+    "name": "512GB M.2 2242 PCIe 4.0 x4 NVMe QLC SSD",
+    "manufacturer": "Drive vendor not specified",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "capacity_GB": 512,
+      "form_factor": "M.2 2242",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "nand_type": "QLC"
+    },
+    "notes": "Lenovo listing for model 83K100C6IN. The SSD manufacturer and controller are not identified."
+  },
+  {
+    "component_id": "DISPLAY-LENOVO-SLIM3-WUXGA",
+    "component_type": "display",
+    "name": "15.3-inch WUXGA IPS 60Hz panel (IdeaPad Slim 3i 83K100C6IN)",
+    "manufacturer": "Panel supplier not specified",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "diagonal_inch": 15.3,
+      "resolution": "1920x1200",
+      "panel": "IPS",
+      "brightness_nits": 300,
+      "surface": "anti-glare",
+      "color_gamut": "45% NTSC",
+      "refresh_rate_Hz": 60,
+      "touch": false
+    },
+    "notes": "Specific to the 83K100C6IN configuration listed on Lenovo India Store."
+  },
+  {
+    "component_id": "BATTERY-LENOVO-SLIM3-50WH",
+    "component_type": "battery",
+    "name": "50Wh 3-cell Li-Polymer battery (IdeaPad Slim 3i 83K100C6IN)",
+    "manufacturer": "Battery supplier not specified",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "specs": {
+      "capacity_Wh": 50,
+      "cell_count": 3,
+      "chemistry": "Li-Polymer"
+    },
+    "notes": "Manufacturer-published battery capacity for the listed SKU. No runtime claim is derived from capacity."
+  },
+  {
+    "component_id": "CPU-INTEL-COREULTRA5-125H",
+    "component_type": "cpu",
+    "name": "Intel Core Ultra 5 125H",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-INTEL-125H",
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "cores": 14,
+      "performance_cores": 4,
+      "efficient_cores": 8,
+      "low_power_efficient_cores": 2,
+      "threads": 18,
+      "max_turbo_GHz": 4.5,
+      "cache_MB": 18,
+      "processor_base_power_W": 28,
+      "maximum_turbo_power_W": 115,
+      "minimum_assured_power_W": 20,
+      "lithography": "Intel 4"
+    },
+    "notes": "Intel ARK values are processor specifications, not measured sustained power or battery consumption in the Acer laptop. Acer confirms this CPU in part NX.KSGSI.001."
+  },
+  {
+    "component_id": "GPU-INTEL-ARC-125H",
+    "component_type": "integrated_gpu",
+    "name": "Intel Arc integrated graphics (Core Ultra 5 125H)",
+    "manufacturer": "Intel",
+    "source_ids": [
+      "SRC-INTEL-125H",
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "type": "integrated",
+      "xe_cores": 7,
+      "max_dynamic_frequency_GHz": 2.2,
+      "gpu_peak_TOPS_Int8": 18,
+      "memory": "shared"
+    },
+    "notes": "Intel processor specification and Acer exact laptop SKU both identify Intel Arc graphics. Graphics frequency/compute maxima are silicon specifications, not benchmark claims for this laptop."
+  },
+  {
+    "component_id": "MEM-LPDDR5X-16-ONBOARD-ACER",
+    "component_type": "memory_configuration",
+    "name": "16GB LPDDR5X memory (Acer Swift Go 14 NX.KSGSI.001)",
+    "manufacturer": "Acer system configuration",
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "capacity_GB": 16,
+      "type": "LPDDR5X",
+      "maximum_supported_GB": 32
+    },
+    "notes": "Acer lists 16GB standard LPDDR5X memory and maximum supported system memory of 32GB for this exact part. The retrieved page does not detail the physical layout or upgrade path."
+  },
+  {
+    "component_id": "DISPLAY-ACER-SWIFTGO-OLED",
+    "component_type": "display",
+    "name": "14-inch 2.8K OLED 90Hz panel (Swift Go 14 NX.KSGSI.001)",
+    "manufacturer": "Panel supplier not specified",
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "diagonal_inch": 14,
+      "resolution": "2880x1800",
+      "panel": "OLED",
+      "refresh_rate_Hz": 90,
+      "color_gamut": "100% DCI-P3",
+      "hdr_certification": "VESA DisplayHDR True Black 500",
+      "aspect_ratio": "16:10",
+      "touch": false
+    },
+    "notes": "Specific to Acer part NX.KSGSI.001 / model SFG14-73-53CL."
+  },
+  {
+    "component_id": "BATTERY-ACER-SWIFTGO-65WH",
+    "component_type": "battery",
+    "name": "65Wh Lithium-Ion battery (Swift Go 14 NX.KSGSI.001)",
+    "manufacturer": "Battery supplier not specified",
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "capacity_Wh": 65,
+      "chemistry": "Lithium-Ion"
+    },
+    "notes": "Acer-published battery capacity for this exact part. Capacity does not establish real-world runtime."
+  },
+  {
+    "component_id": "WIRELESS-WIFI7-BT53-ACER",
+    "component_type": "wireless",
+    "name": "Killer 1750x Wi-Fi 7 / Bluetooth 5.3 or above (Swift Go 14 NX.KSGSI.001)",
+    "manufacturer": "Killer / wireless module vendor per Acer listing",
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "specs": {
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "wireless_card": "Killer 1750x",
+      "bluetooth": "5.3 or above"
+    },
+    "notes": "Acer product page wording is retained; Bluetooth version is not normalised beyond the source’s “5.3 or above”."
+  }
+]

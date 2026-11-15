@@ -1,0 +1,40 @@
+# backend/requirements.txt
+# Owner: P1
+# Purpose: Python dependencies.
+# Depends on: none
+# Used by: Makefile (make install)
+#
+# PROMPT:
+# Write only this file. It lists the backend's Python dependencies, one per line.
+#
+# Requirements:
+# - fastapi, uvicorn[standard], sqlalchemy>=2.0, psycopg[binary]>=3, pydantic>=2,
+#   pydantic-settings, httpx, pytest.
+# - Use minimum-version ranges (>=) unless you have checked an exact version.
+# - Group with comment lines: runtime, database, http, testing.
+#
+# Do not:
+# - Add any package that no file in this repo imports.
+# - Add a frontend dependency.
+#
+# Done when: pip install -r backend/requirements.txt succeeds in a clean Python 3.11+
+# virtual environment.
+#
+# Context to paste first: docs/P1_CONTEXT.md, docs/statuses-and-events.md,
+# docs/api-contract.md, plus the headers of the files listed under Depends on.
+
+# runtime
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+
+# database
+sqlalchemy>=2.0.28
+psycopg[binary]>=3.1.18
+
+# http
+httpx>=0.27.0
+
+# testing
+pytest>=8.0.0

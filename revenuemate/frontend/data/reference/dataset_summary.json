@@ -1,0 +1,13 @@
+{
+  "snapshot_date": "2026-11-13",
+  "product_variant_count": 11,
+  "product_family_count": 12,
+  "family_only_profile_count": 2,
+  "component_count": 53,
+  "product_component_link_count": 58,
+  "source_count": 21,
+  "merchant_offer_count": 0,
+  "product_variants_recommendation_eligible": 10,
+  "product_variants_excluded_due_to_incomplete_variant": 1,
+  "truthfulness": "No LLM-generated product specifications, benchmark values, prices, stock quantities, or compatibility claims. Populated hardware facts are linked to official manufacturer/OEM sources. Segment tags and database identifiers are local taxonomy metadata, not manufacturer assertions."
+}

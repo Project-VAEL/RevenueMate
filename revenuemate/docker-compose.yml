@@ -1,0 +1,24 @@
+# docker-compose.yml
+# Owner: P1
+# Purpose: Local PostgreSQL for development.
+# Depends on: none
+# Used by: Makefile (make db)
+#
+# PROMPT:
+# Write only this file. One service named db running PostgreSQL 16 for local development.
+#
+# Requirements:
+# - Image postgres:16. Credentials and database name come from POSTGRES_USER,
+#   POSTGRES_PASSWORD, POSTGRES_DB in .env.
+# - Publish port 5432. Named volume for data. A pg_isready healthcheck.
+# - env_file: .env at the repository root.
+#
+# Do not:
+# - Add the API or frontend as services.
+# - Hard-code credentials.
+#
+# Done when: docker compose up -d db starts a database that DATABASE_URL in .env.example can
+# reach.
+#
+# Context to paste first: docs/P1_CONTEXT.md, docs/statuses-and-events.md,
+# docs/api-contract.md, plus the headers of the files listed under Depends on.

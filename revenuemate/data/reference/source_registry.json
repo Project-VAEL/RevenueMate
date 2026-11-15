@@ -1,0 +1,233 @@
+[
+  {
+    "source_id": "SRC-ASUS-VIVOBOOK15",
+    "publisher": "ASUS India",
+    "title": "ASUS Vivobook 15 (X1504) — Tech Specs",
+    "url": "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-15-x1504/techspec/",
+    "source_type": "manufacturer_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "Model family and regional configuration matrix",
+    "notes": "Manufacturer page lists several model codes and configuration options. Only fields clearly attributable to X1504VAP are populated in that variant record; unresolved fields remain null."
+  },
+  {
+    "source_id": "SRC-HP-OMNI14",
+    "publisher": "HP India",
+    "title": "HP OmniBook 5 LaptopAI 14-mh0045TU — Product specifications",
+    "url": "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-mh0045tu-e70fypa-acj",
+    "source_type": "manufacturer_store_and_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "SKU E70FYPA#ACJ / 14-mh0045TU",
+    "notes": "HP store specification page. Retail price and stock shown there are not copied into merchant offer fields."
+  },
+  {
+    "source_id": "SRC-HP-OMNI16",
+    "publisher": "HP India",
+    "title": "HP OmniBook 5 Laptop 16-ba1124TU — Product specifications",
+    "url": "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptop-16-ba1124tu-bh4k6pa-acj",
+    "source_type": "manufacturer_store_and_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "SKU BH4K6PA#ACJ / 16-ba1124TU",
+    "notes": "HP store specification page. Retail price and stock shown there are not copied into merchant offer fields."
+  },
+  {
+    "source_id": "SRC-LENOVO-T14",
+    "publisher": "Lenovo PSREF",
+    "title": "ThinkPad T14 Gen 5 (AMD), model 21MC0071BM",
+    "url": "https://psref.lenovo.com/Detail/ThinkPad_T14_Gen_5_AMD?M=21MC0071BM",
+    "source_type": "manufacturer_platform_reference",
+    "region": "Global model listing",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact machine type model 21MC0071BM",
+    "notes": "Lenovo PSREF identifies processor, graphics, memory, slots, max memory and storage for the specific MTM."
+  },
+  {
+    "source_id": "SRC-LENOVO-LOQ",
+    "publisher": "Lenovo PSREF",
+    "title": "LOQ 15IRX9, model 83DV01SJVN",
+    "url": "https://psref.lenovo.com/Detail/LOQ_15IRX9?M=83DV01SJVN",
+    "source_type": "manufacturer_platform_reference",
+    "region": "Global model listing",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact machine type model 83DV01SJVN",
+    "notes": "Lenovo PSREF exact MTM page; values describe this listed machine type, not every LOQ 15IRX9 configuration."
+  },
+  {
+    "source_id": "SRC-HP-VICTUS",
+    "publisher": "HP Support",
+    "title": "Victus Gaming Laptop 15-fa2382TX (C96J5PA) — Product specifications",
+    "url": "https://support.hp.com/in-en/product/product-specs/victus-by-hp-15.6-inch-gaming-laptop-15-fa2000/model/2103532325?sku=C96J5PA",
+    "source_type": "manufacturer_support_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact SKU C96J5PA",
+    "notes": "HP Support product-spec page; exact regional SKU matters."
+  },
+  {
+    "source_id": "SRC-ASUS-PROART",
+    "publisher": "ASUS India",
+    "title": "ProArt P16 (H7606) — Tech Specs",
+    "url": "https://www.asus.com/in/laptops/for-creators/proart/proart-p16-h7606/techspec/",
+    "source_type": "manufacturer_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact variants H7606WX and H7606WW",
+    "notes": "The page maps H7606WX to RTX 5090 Laptop GPU and H7606WW to RTX 5080 Laptop GPU. Shared display, memory, storage, battery and ports are recorded separately."
+  },
+  {
+    "source_id": "SRC-ASUS-TUF",
+    "publisher": "ASUS",
+    "title": "ASUS TUF Gaming A15 (2024) — Tech Specs",
+    "url": "https://www.asus.com/laptops/for-gaming/tuf-gaming/asus-tuf-gaming-a15-2024/techspec/",
+    "source_type": "manufacturer_specification",
+    "region": "Global page",
+    "retrieved_on": "2026-11-13",
+    "scope": "Family-level configuration options",
+    "notes": "Page exposes FA507UI / FA507UV / FA507UU and multiple CPU/GPU/display options. The retrieved matrix did not provide a safe one-to-one SKU pairing for every configuration, so this is family-only and excluded from exact-variant recommendation until a retailer/OEM SKU is confirmed."
+  },
+  {
+    "source_id": "SRC-APPLE-AIR",
+    "publisher": "Apple India",
+    "title": "MacBook Air — Tech Specs",
+    "url": "https://www.apple.com/in/macbook-air/specs/",
+    "source_type": "manufacturer_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "13-inch MacBook Air with M5; selected base configuration",
+    "notes": "Apple's page lists multiple configurable builds. The stored record explicitly identifies the selected 13-inch base configuration; Apple part number is not asserted."
+  },
+  {
+    "source_id": "SRC-APPLE-PRO",
+    "publisher": "Apple India",
+    "title": "MacBook Pro — Tech Specs",
+    "url": "https://www.apple.com/in/macbook-pro/specs/",
+    "source_type": "manufacturer_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "14-inch MacBook Pro M5 Pro family-level chip options",
+    "notes": "Family-level source only. Not converted into a fixed SKU because the page lists several configurable CPU/GPU, memory and storage combinations."
+  },
+  {
+    "source_id": "SRC-INTEL-I513450HX",
+    "publisher": "Intel",
+    "title": "Intel Core i5-13450HX Processor — Specifications",
+    "url": "https://www.intel.com/content/www/us/en/products/sku/232132/intel-core-i513450hx-processor-20m-cache-up-to-4-60-ghz/specifications.html",
+    "source_type": "component_manufacturer_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Processor component specifications",
+    "notes": "Intel ARK data; values are component-level maximums and do not predict sustained laptop performance."
+  },
+  {
+    "source_id": "SRC-INTEL-150U",
+    "publisher": "Intel",
+    "title": "Intel Core 7 processor 150U — Specifications",
+    "url": "https://www.intel.com/content/www/us/en/products/sku/236795/intel-core-7-processor-150u-12m-cache-up-to-5-40-ghz/specifications.html",
+    "source_type": "component_manufacturer_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Processor component specifications",
+    "notes": "Intel ARK data; platform power and cooling implementation still vary by laptop."
+  },
+  {
+    "source_id": "SRC-AMD-370",
+    "publisher": "AMD",
+    "title": "AMD Ryzen AI 9 HX 370 — Product Specifications",
+    "url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-9-hx-370.html",
+    "source_type": "component_manufacturer_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Processor and integrated graphics specifications",
+    "notes": "AMD product specifications."
+  },
+  {
+    "source_id": "SRC-AMD-260",
+    "publisher": "AMD",
+    "title": "AMD Ryzen 7 260 — Product Specifications",
+    "url": "https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-260.html",
+    "source_type": "component_manufacturer_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Processor and integrated graphics specifications",
+    "notes": "AMD product specifications."
+  },
+  {
+    "source_id": "SRC-AMD-8040",
+    "publisher": "AMD",
+    "title": "AMD Ryzen PRO 8040 Series Mobile Processors — Product information",
+    "url": "https://www.amd.com/en/partner/articles/ryzen-pro-8040-series-next-gen-pro-cpu.html",
+    "source_type": "component_manufacturer_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Ryzen 5 PRO 8540U and Ryzen 7 PRO 8845HS component specifications",
+    "notes": "AMD processor family reference; Lenovo PSREF remains the source for the particular laptop configuration."
+  },
+  {
+    "source_id": "SRC-AMD-8845HS-QRG",
+    "publisher": "AMD",
+    "title": "AMD Ryzen 8040 Series processors — Quick Reference Guide",
+    "url": "https://www.amd.com/content/dam/amd/en/documents/partner-hub/ryzen/amd-ryzen-8040-series-quick-reference-guide.pdf",
+    "source_type": "component_manufacturer_reference",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Ryzen 7 8845HS specifications",
+    "notes": "AMD quick reference lists cores/threads, clocks, cache, integrated graphics, process and TDP range."
+  },
+  {
+    "source_id": "SRC-INTEL-I51334U",
+    "publisher": "Intel",
+    "title": "Intel Core i5-1334U Processor — Product Specifications",
+    "url": "https://www.intel.com/content/www/us/en/products/sku/232143/intel-core-i51334u-processor-12m-cache-up-to-4-60-ghz/specifications.html",
+    "source_type": "processor_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Intel official product specification for i5-1334U",
+    "notes": "Intel lists 10 cores (2 performance + 8 efficient), 12 threads, up to 4.60GHz, 12MB cache, 15W processor base power and 55W maximum turbo power. Processor power values are not laptop battery draw."
+  },
+  {
+    "source_id": "SRC-INTEL-13TH-MOBILE",
+    "publisher": "Intel",
+    "title": "Intel 13th Gen Core Mobile Processors — Official Press Deck",
+    "url": "https://download.intel.com/newsroom/2023/client-computing/Intel-13th-Gen-Core-Mobile-Press-Deck.pdf",
+    "source_type": "processor_reference_document",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Processor family reference for Intel Core i5-13420H",
+    "notes": "Official Intel press deck lists i5-13420H as 8 cores (4P+4E), 12 threads, 4.6GHz P-core maximum turbo, 3.4GHz E-core maximum turbo and 12MB cache. OEM laptop configuration remains authoritative for device-specific behaviour."
+  },
+  {
+    "source_id": "SRC-INTEL-125H",
+    "publisher": "Intel",
+    "title": "Intel Core Ultra 5 Processor 125H — Product Specifications",
+    "url": "https://www.intel.com/content/www/us/en/products/sku/236848/intel-core-ultra-5-processor-125h-18m-cache-up-to-4-50-ghz/specifications.html",
+    "source_type": "processor_specification",
+    "region": "Global",
+    "retrieved_on": "2026-11-13",
+    "scope": "Intel official product specification for Core Ultra 5 125H",
+    "notes": "Intel lists 14 cores (4P+8E+2LPE), 18 threads, up to 4.5GHz, 18MB cache, 28W base power and 115W maximum turbo power. Also lists integrated Arc graphics, 7 Xe-cores, 11 NPU TOPS. System implementation is OEM-dependent."
+  },
+  {
+    "source_id": "SRC-LENOVO-IDEAPAD-SLIM3",
+    "publisher": "Lenovo India Store",
+    "title": "IdeaPad Slim 3i Gen 10 / 15IRH10 — model 83K100C6IN technical specifications",
+    "url": "https://store.lenovo.com/in/en/nb-ip-slim-3-15irh10-i5-8g-8g-512g-11s-83k100c6in-162.html",
+    "source_type": "manufacturer_store_and_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact Lenovo India model number 83K100C6IN",
+    "notes": "Lenovo listing exposes model number and technical specification fields. Store price, seller, pickup and delivery availability are intentionally not copied into RevenueMate merchant inventory."
+  },
+  {
+    "source_id": "SRC-ACER-SWIFTGO14",
+    "publisher": "Acer India",
+    "title": "Swift Go 14 SFG14-73-53CL — part NX.KSGSI.001 technical specifications",
+    "url": "https://www.acer.com/in-en/laptops/swift/swift-go/pdp/NX.KSGSI.001",
+    "source_type": "manufacturer_specification",
+    "region": "India",
+    "retrieved_on": "2026-11-13",
+    "scope": "Exact Acer India product part NX.KSGSI.001 / SFG14-73-53CL",
+    "notes": "Acer India page identifies exact model and part number and lists processor, memory, display, storage, connectivity, battery and weight."
+  }
+]

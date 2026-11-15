@@ -1,0 +1,841 @@
+[
+  {
+    "product_id": "P-ASUS-X1504VAP",
+    "family_id": "F-ASUS-VIVOBOOK15",
+    "brand": "ASUS",
+    "product_name": "ASUS Vivobook 15 (X1504)",
+    "model_code": "X1504VAP",
+    "manufacturer_sku": null,
+    "variant_precision": "model_code_variant",
+    "region": "India",
+    "configuration_status": "partially_resolved_variant",
+    "source_ids": [
+      "SRC-ASUS-VIVOBOOK15",
+      "SRC-INTEL-I51334U"
+    ],
+    "segment_tags": [
+      "mainstream",
+      "student",
+      "home_productivity"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core i5-1334U",
+        "base_frequency_GHz": null,
+        "max_turbo_GHz": 4.6,
+        "cores": 10,
+        "threads": 12,
+        "cache_MB": 12
+      },
+      "display": null,
+      "storage": {
+        "capacity_GB": 512,
+        "form_factor": "M.2",
+        "interface": "PCIe 4.0 NVMe"
+      },
+      "operating_system_options": [
+        "Windows 11 Home"
+      ],
+      "memory": null,
+      "graphics": null,
+      "battery": null,
+      "wireless": null,
+      "ports": null
+    },
+    "unknown_or_unresolved_fields": [
+      "memory configuration for this exact model code not safely mapped from variant matrix",
+      "battery capacity",
+      "weight",
+      "port layout",
+      "display panel and exact variant mapping not unambiguously resolved from the regional configuration matrix",
+      "graphics configuration for the exact X1504VAP variant is not safely mapped",
+      "graphics configuration for the exact X1504VAP variant is not safely mapped"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": false,
+    "eligibility_reason": "Incomplete exact-variant configuration; use only for discovery until a specific machine type/retail SKU is verified."
+  },
+  {
+    "product_id": "P-HP-OMNI14-E70FYPA",
+    "family_id": "F-HP-OMNI14",
+    "brand": "HP",
+    "product_name": "HP OmniBook 5 LaptopAI 14-mh0045TU",
+    "model_code": "14-mh0045TU",
+    "manufacturer_sku": "E70FYPA#ACJ",
+    "variant_precision": "exact_india_sku",
+    "region": "India",
+    "configuration_status": "manufacturer_sku_verified",
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "segment_tags": [
+      "portable_productivity",
+      "student",
+      "everyday"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core 5 320",
+        "cores": 6,
+        "threads": 6,
+        "max_turbo_GHz": 4.6,
+        "cache_L3_MB": 6,
+        "npu_TOPS": 16
+      },
+      "graphics": {
+        "model": "Intel Graphics",
+        "type": "integrated"
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "LPDDR5-6400",
+        "placement": "onboard"
+      },
+      "storage": {
+        "capacity_GB": 512,
+        "type": "SSD",
+        "interface": "M.2 NVMe PCIe 4.0"
+      },
+      "display": {
+        "diagonal_inch": 14,
+        "resolution": "1920x1200",
+        "panel": "OLED",
+        "brightness_nits": 300,
+        "color_gamut": "100% DCI-P3",
+        "response_ms": 0.2,
+        "aspect_ratio": "16:10"
+      },
+      "weight_kg": 1.16,
+      "wireless": {
+        "wifi": "Wi-Fi 6E",
+        "bluetooth": "5.3"
+      },
+      "ports": [
+        "2x USB-C 10Gbps (USB Power Delivery 3.1, DisplayPort 2.1)",
+        "1x HDMI 2.1",
+        "1x 3.5mm combo audio"
+      ],
+      "camera": "FHD IR camera",
+      "operating_system": "Windows 11 Home Single Language"
+    },
+    "unknown_or_unresolved_fields": [
+      "battery capacity in Wh not included in extracted specification set"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Exact HP India product code and detailed manufacturer specification page available."
+  },
+  {
+    "product_id": "P-HP-OMNI16-BH4K6PA",
+    "family_id": "F-HP-OMNI16",
+    "brand": "HP",
+    "product_name": "HP OmniBook 5 Laptop 16-ba1124TU",
+    "model_code": "16-ba1124TU",
+    "manufacturer_sku": "BH4K6PA#ACJ",
+    "variant_precision": "exact_india_sku",
+    "region": "India",
+    "configuration_status": "manufacturer_sku_verified",
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "segment_tags": [
+      "large_screen_productivity",
+      "student",
+      "home_office"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core i5-1334U",
+        "cores": 10,
+        "threads": 12,
+        "max_turbo_GHz": 4.6,
+        "cache_L3_MB": 12
+      },
+      "graphics": {
+        "model": "Intel Iris Xe Graphics",
+        "type": "integrated",
+        "source_caveat": "HP notes Iris Xe capability depends on dual-channel memory; this SKU's published memory is onboard 16GB LPDDR5x-4800, but the page does not state channel topology in the captured specification."
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "LPDDR5x-4800",
+        "placement": "onboard"
+      },
+      "storage": {
+        "capacity_GB": 1024,
+        "type": "SSD"
+      },
+      "display": {
+        "diagonal_inch": 16,
+        "resolution": "1920x1200",
+        "panel": "IPS",
+        "brightness_nits": 300,
+        "color_gamut": "62.5% sRGB",
+        "aspect_ratio": "16:10",
+        "anti_glare": true
+      },
+      "wireless": {
+        "wifi": "Wi-Fi 6",
+        "bluetooth": "5.4"
+      },
+      "ports": [
+        "1x USB-A 10Gbps",
+        "1x USB-A 5Gbps",
+        "2x USB-C 10Gbps (USB Power Delivery 3.1, DisplayPort 1.4a)",
+        "1x HDMI 2.1",
+        "1x headphone/microphone combo"
+      ],
+      "operating_system": "Windows 11 Home Single Language"
+    },
+    "unknown_or_unresolved_fields": [
+      "battery capacity",
+      "weight",
+      "exact SSD manufacturer and controller"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Exact HP India part number is provided on the HP store specification page."
+  },
+  {
+    "product_id": "P-LENOVO-T14G5AMD-21MC0071BM",
+    "family_id": "F-LENOVO-T14G5AMD",
+    "brand": "Lenovo",
+    "product_name": "ThinkPad T14 Gen 5 (AMD)",
+    "model_code": "21MC0071BM",
+    "manufacturer_sku": "21MC0071BM",
+    "variant_precision": "exact_lenovo_mtm",
+    "region": "Global model listing",
+    "configuration_status": "exact_mtm_verified",
+    "source_ids": [
+      "SRC-LENOVO-T14",
+      "SRC-AMD-8040"
+    ],
+    "segment_tags": [
+      "business",
+      "enterprise",
+      "productivity"
+    ],
+    "facts": {
+      "processor": {
+        "model": "AMD Ryzen 5 PRO 8540U",
+        "cores": 6,
+        "threads": 12,
+        "base_GHz": 3.2,
+        "max_boost_GHz": 4.9,
+        "cache_L2_MB": 6,
+        "cache_L3_MB": 16
+      },
+      "graphics": {
+        "model": "AMD Radeon 740M",
+        "type": "integrated"
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "DDR5-5600",
+        "placement": "1x SODIMM"
+      },
+      "memory_slots": 2,
+      "max_memory_GB": 64,
+      "storage": {
+        "capacity_GB": 512,
+        "form_factor": "M.2 2280",
+        "interface": "PCIe 4.0 x4 NVMe",
+        "security": "Opal 2.0"
+      },
+      "operating_system": "Windows 11 Pro",
+      "case_color": "Black"
+    },
+    "unknown_or_unresolved_fields": [
+      "exact display panel configuration for MTM 21MC0071BM not included in retrieved detail"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Lenovo PSREF exact MTM record and AMD processor reference are available."
+  },
+  {
+    "product_id": "P-LENOVO-LOQ15IRX9-83DV01SJVN",
+    "family_id": "F-LENOVO-LOQ15IRX9",
+    "brand": "Lenovo",
+    "product_name": "Lenovo LOQ 15IRX9",
+    "model_code": "83DV01SJVN",
+    "manufacturer_sku": "83DV01SJVN",
+    "variant_precision": "exact_lenovo_mtm",
+    "region": "Global model listing",
+    "configuration_status": "exact_mtm_verified",
+    "source_ids": [
+      "SRC-LENOVO-LOQ",
+      "SRC-INTEL-I513450HX"
+    ],
+    "segment_tags": [
+      "gaming",
+      "gpu_accelerated_workloads"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core i5-13450HX",
+        "cores": 10,
+        "performance_cores": 6,
+        "efficient_cores": 4,
+        "threads": 16,
+        "base_frequency_P_GHz": 2.4,
+        "max_turbo_P_GHz": 4.6,
+        "cache_MB": 20,
+        "processor_base_power_W": 55,
+        "max_turbo_power_W": 157
+      },
+      "graphics": {
+        "model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "memory_GB": 6,
+        "memory_type": "GDDR6",
+        "boost_clock_MHz": 2370,
+        "tgp_W": 105
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "DDR5-4800",
+        "placement": "1x SODIMM"
+      },
+      "memory_slots": 2,
+      "max_memory_GB": 32,
+      "storage": {
+        "capacity_GB": 512,
+        "form_factor": "M.2 2242",
+        "interface": "PCIe 4.0 x4 NVMe"
+      },
+      "display": {
+        "diagonal_inch": 15.6,
+        "resolution": "1920x1080",
+        "panel": "IPS",
+        "brightness_nits": 300,
+        "color_gamut": "100% sRGB",
+        "refresh_rate_Hz": 144,
+        "features": [
+          "anti-glare",
+          "G-SYNC"
+        ]
+      },
+      "battery": {
+        "capacity_Wh": 60
+      },
+      "operating_system": "Windows 11 Home Single Language",
+      "webcam": "720p with e-shutter",
+      "ports": [
+        "USB-C 10Gbps with USB PD 65-100W and DisplayPort 1.4",
+        "3x USB-A 5Gbps",
+        "HDMI",
+        "RJ-45 Ethernet",
+        "3.5mm combo audio"
+      ]
+    },
+    "unknown_or_unresolved_fields": [
+      "exact WLAN card option for this MTM not included in extracted record"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Exact Lenovo MTM page identifies processor, GPU TGP, memory, storage, display and battery."
+  },
+  {
+    "product_id": "P-HP-VICTUS15-C96J5PA",
+    "family_id": "F-HP-VICTUS15",
+    "brand": "HP",
+    "product_name": "Victus Gaming Laptop 15-fa2382TX",
+    "model_code": "15-fa2382TX",
+    "manufacturer_sku": "C96J5PA",
+    "variant_precision": "exact_india_sku",
+    "region": "India",
+    "configuration_status": "manufacturer_sku_verified",
+    "source_ids": [
+      "SRC-HP-VICTUS"
+    ],
+    "segment_tags": [
+      "gaming",
+      "performance"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core i5-14500HX",
+        "cores": 14,
+        "threads": 20,
+        "max_turbo_GHz": 4.9,
+        "cache_L3_MB": 24
+      },
+      "graphics": {
+        "model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "memory_GB": 6,
+        "memory_type": "GDDR6"
+      },
+      "memory": {
+        "capacity_GB": 24,
+        "type": "DDR5-5600",
+        "placement": "1x 24GB"
+      },
+      "storage": {
+        "capacity_GB": 512,
+        "interface": "PCIe Gen4 NVMe M.2 SSD"
+      },
+      "display": {
+        "diagonal_inch": 15.6,
+        "resolution": "1920x1080",
+        "panel": "IPS",
+        "brightness_nits": 300,
+        "color_gamut": "62.5% sRGB",
+        "refresh_rate_Hz": 144,
+        "anti_glare": true
+      },
+      "operating_system": "Windows 11 Home Single Language",
+      "ports": [
+        "2x USB-A 5Gbps (one with HP Sleep and Charge)",
+        "1x USB-C 5Gbps with USB PD 3.1 and DisplayPort 1.4a",
+        "HDMI 2.1",
+        "RJ-45 Ethernet",
+        "3.5mm headphone/microphone combo"
+      ]
+    },
+    "unknown_or_unresolved_fields": [
+      "GPU TGP",
+      "battery capacity",
+      "weight",
+      "wireless card exact model"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "HP Support exact SKU C96J5PA page identifies CPU, memory, SSD, display and discrete GPU."
+  },
+  {
+    "product_id": "P-ASUS-PROARTP16-H7606WX",
+    "family_id": "F-ASUS-PROARTP16",
+    "brand": "ASUS",
+    "product_name": "ASUS ProArt P16 (H7606WX)",
+    "model_code": "H7606WX",
+    "manufacturer_sku": null,
+    "variant_precision": "manufacturer_model_variant",
+    "region": "India",
+    "configuration_status": "variant_verified",
+    "source_ids": [
+      "SRC-ASUS-PROART",
+      "SRC-AMD-370"
+    ],
+    "segment_tags": [
+      "creator",
+      "mobile_workstation_class",
+      "gpu_accelerated_workloads"
+    ],
+    "facts": {
+      "processor": {
+        "model": "AMD Ryzen AI 9 HX 370",
+        "cores": 12,
+        "threads": 24,
+        "base_GHz": 2.0,
+        "max_boost_GHz": 5.1,
+        "cache_L2_MB": 12,
+        "cache_L3_MB": 24,
+        "npu_TOPS": 50
+      },
+      "graphics": {
+        "model": "NVIDIA GeForce RTX 5090 Laptop GPU",
+        "memory_GB": 24,
+        "memory_type": "GDDR7"
+      },
+      "memory": {
+        "capacity_GB": 64,
+        "type": "LPDDR5X",
+        "placement": "onboard"
+      },
+      "storage": {
+        "capacity_GB": 2048,
+        "form_factor": "M.2 2280",
+        "interface": "PCIe 4.0 NVMe"
+      },
+      "display": {
+        "diagonal_inch": 16,
+        "resolution": "3840x2400",
+        "panel": "OLED",
+        "refresh_rate_Hz": 120,
+        "response_ms": 0.2,
+        "brightness_HDR_peak_nits": 1600,
+        "color_gamut": "100% DCI-P3",
+        "contrast_ratio": "1000000:1",
+        "touch": true,
+        "stylus_support": true,
+        "color_validation": "PANTONE Validated"
+      },
+      "expansion_slots": [
+        "1x M.2 2280 PCIe 4.0 x4",
+        "1x M.2 2280 PCIe 4.0 x2"
+      ],
+      "wireless": {
+        "wifi": "Wi-Fi 7",
+        "bluetooth": "5.4"
+      },
+      "battery": {
+        "capacity_Wh": 99.9
+      },
+      "power_adapter": {
+        "interface": "USB-C",
+        "power_W": 140
+      },
+      "ports": [
+        "2x USB 3.2 Gen 2 Type-A up to 10Gbps",
+        "1x USB4 Gen 3 Type-C up to 40Gbps with display/power delivery",
+        "1x USB 3.2 Gen 2 Type-C up to 10Gbps with display/power delivery",
+        "HDMI 2.1 FRL",
+        "SD Express 7.0 card reader",
+        "3.5mm combo audio"
+      ]
+    },
+    "unknown_or_unresolved_fields": [
+      "weight not included in current extracted record"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "ASUS India page maps H7606WX directly to RTX 5090 24GB and lists shared exact configuration details."
+  },
+  {
+    "product_id": "P-ASUS-PROARTP16-H7606WW",
+    "family_id": "F-ASUS-PROARTP16",
+    "brand": "ASUS",
+    "product_name": "ASUS ProArt P16 (H7606WW)",
+    "model_code": "H7606WW",
+    "manufacturer_sku": null,
+    "variant_precision": "manufacturer_model_variant",
+    "region": "India",
+    "configuration_status": "variant_verified",
+    "source_ids": [
+      "SRC-ASUS-PROART",
+      "SRC-AMD-370"
+    ],
+    "segment_tags": [
+      "creator",
+      "mobile_workstation_class",
+      "gpu_accelerated_workloads"
+    ],
+    "facts": {
+      "processor": {
+        "model": "AMD Ryzen AI 9 HX 370",
+        "cores": 12,
+        "threads": 24,
+        "base_GHz": 2.0,
+        "max_boost_GHz": 5.1,
+        "cache_L2_MB": 12,
+        "cache_L3_MB": 24,
+        "npu_TOPS": 50
+      },
+      "graphics": {
+        "model": "NVIDIA GeForce RTX 5080 Laptop GPU",
+        "memory_GB": 16,
+        "memory_type": "GDDR7"
+      },
+      "memory": {
+        "capacity_GB": 64,
+        "type": "LPDDR5X",
+        "placement": "onboard"
+      },
+      "storage": {
+        "capacity_GB": 2048,
+        "form_factor": "M.2 2280",
+        "interface": "PCIe 4.0 NVMe"
+      },
+      "display": {
+        "diagonal_inch": 16,
+        "resolution": "3840x2400",
+        "panel": "OLED",
+        "refresh_rate_Hz": 120,
+        "response_ms": 0.2,
+        "brightness_HDR_peak_nits": 1600,
+        "color_gamut": "100% DCI-P3",
+        "contrast_ratio": "1000000:1",
+        "touch": true,
+        "stylus_support": true,
+        "color_validation": "PANTONE Validated"
+      },
+      "expansion_slots": [
+        "1x M.2 2280 PCIe 4.0 x4",
+        "1x M.2 2280 PCIe 4.0 x2"
+      ],
+      "wireless": {
+        "wifi": "Wi-Fi 7",
+        "bluetooth": "5.4"
+      },
+      "battery": {
+        "capacity_Wh": 99.9
+      },
+      "power_adapter": {
+        "interface": "USB-C",
+        "power_W": 140
+      },
+      "ports": [
+        "2x USB 3.2 Gen 2 Type-A up to 10Gbps",
+        "1x USB4 Gen 3 Type-C up to 40Gbps with display/power delivery",
+        "1x USB 3.2 Gen 2 Type-C up to 10Gbps with display/power delivery",
+        "HDMI 2.1 FRL",
+        "SD Express 7.0 card reader",
+        "3.5mm combo audio"
+      ]
+    },
+    "unknown_or_unresolved_fields": [
+      "weight not included in current extracted record"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "ASUS India page maps H7606WW directly to RTX 5080 16GB and lists shared exact configuration details."
+  },
+  {
+    "product_id": "P-APPLE-AIR13-M5-BASE",
+    "family_id": "F-APPLE-AIR-13-M5",
+    "brand": "Apple",
+    "product_name": "Apple MacBook Air 13-inch (M5) — base published configuration",
+    "model_code": null,
+    "manufacturer_sku": null,
+    "variant_precision": "manufacturer_published_configuration_no_part_number",
+    "region": "India",
+    "configuration_status": "base_configuration_fields_verified",
+    "source_ids": [
+      "SRC-APPLE-AIR"
+    ],
+    "segment_tags": [
+      "portable_productivity",
+      "developer_workstation_lightweight",
+      "everyday"
+    ],
+    "facts": {
+      "processor_and_gpu": {
+        "soc": "Apple M5",
+        "cpu_cores": 10,
+        "cpu_core_types": "4 super cores + 6 efficiency cores",
+        "gpu_cores": 8,
+        "neural_engine_cores": 16,
+        "memory_bandwidth_GB_s": 153,
+        "media_engine": [
+          "H.264",
+          "HEVC",
+          "ProRes",
+          "ProRes RAW",
+          "AV1 decode"
+        ],
+        "hardware_accelerated_ray_tracing": true
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "unified memory"
+      },
+      "storage": {
+        "capacity_GB": 512,
+        "type": "SSD"
+      },
+      "display": {
+        "diagonal_inch": 13.6,
+        "resolution": "2560x1664",
+        "pixel_density_ppi": 224,
+        "brightness_nits": 500,
+        "panel": "LED-backlit IPS",
+        "colour_support": "1 billion colours",
+        "colour_gamut": "P3",
+        "true_tone": true
+      },
+      "battery": {
+        "capacity_Wh": 53.8,
+        "video_streaming_hours_up_to": 18,
+        "wireless_web_hours_up_to": 15,
+        "chemistry": "lithium-polymer"
+      },
+      "charging_and_expansion": [
+        "MagSafe 3 charging port",
+        "3.5mm headphone jack"
+      ],
+      "power_adapter": "30W USB-C (8-core GPU configuration); 35W dual USB-C adapter listed for 10-core GPU configuration"
+    },
+    "unknown_or_unresolved_fields": [
+      "Apple commercial part number depends on selected country/colour/configuration",
+      "wireless/port details beyond those listed not extracted"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Apple India technical specification page supports the selected 13-inch base configuration; no third-party performance claims are included."
+  },
+  {
+    "product_id": "P-LENOVO-IDEAPADSLIM3-83K100C6IN",
+    "family_id": "F-LENOVO-IDEAPADSLIM3-15IRH10",
+    "brand": "Lenovo",
+    "product_name": "Lenovo IdeaPad Slim 3i Gen 10 (15IRH10)",
+    "model_code": "15IRH10",
+    "manufacturer_sku": "83K100C6IN",
+    "variant_precision": "exact_india_model_number",
+    "region": "India",
+    "configuration_status": "manufacturer_model_number_verified",
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3",
+      "SRC-INTEL-13TH-MOBILE"
+    ],
+    "segment_tags": [
+      "mainstream",
+      "student",
+      "office_productivity",
+      "general_programming"
+    ],
+    "facts": {
+      "processor": {
+        "model": "13th Gen Intel Core i5-13420H",
+        "cores": 8,
+        "performance_cores": 4,
+        "efficient_cores": 4,
+        "threads": 12,
+        "p_core_max_turbo_GHz": 4.6,
+        "e_core_max_turbo_GHz": 3.4,
+        "cache_MB": 12
+      },
+      "graphics": {
+        "model": "Intel UHD Graphics",
+        "type": "integrated",
+        "memory": "shared"
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "DDR5-4800",
+        "layout": "8GB soldered + 8GB SODIMM",
+        "slots": "one soldered memory and one DDR5 SODIMM slot"
+      },
+      "storage": {
+        "capacity_GB": 512,
+        "type": "SSD",
+        "form_factor": "M.2 2242",
+        "interface": "PCIe 4.0 x4 NVMe"
+      },
+      "display": {
+        "diagonal_inch": 15.3,
+        "resolution": "1920x1200",
+        "panel": "IPS",
+        "brightness_nits": 300,
+        "surface": "anti-glare",
+        "color_gamut": "45% NTSC",
+        "refresh_rate_Hz": 60,
+        "touch": false
+      },
+      "battery": {
+        "capacity_Wh": 50,
+        "chemistry": "Li-Polymer",
+        "cell_count": 3
+      },
+      "weight_kg": 1.63,
+      "camera": "1080p FHD IR hybrid camera with privacy shutter",
+      "wireless": null,
+      "power_adapter": {
+        "power_W": 65
+      },
+      "operating_system": "Windows 11 Home Single Language 64-bit",
+      "keyboard": {
+        "backlit": true,
+        "layout": "English (US)",
+        "color": "Luna Grey"
+      }
+    },
+    "unknown_or_unresolved_fields": [
+      "exact SSD controller/manufacturer not published",
+      "wireless adapter model and Bluetooth version not stated in the retrieved SKU page"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Exact India model number 83K100C6IN and its listed specifications are published by Lenovo India Store; local merchant price and stock remain unset."
+  },
+  {
+    "product_id": "P-ACER-SWIFTGO14-NXKSGSI001",
+    "family_id": "F-ACER-SWIFTGO14-SFG14-73",
+    "brand": "Acer",
+    "product_name": "Acer Swift Go 14 (SFG14-73-53CL)",
+    "model_code": "SFG14-73-53CL",
+    "manufacturer_sku": "NX.KSGSI.001",
+    "variant_precision": "exact_india_part_number",
+    "region": "India",
+    "configuration_status": "manufacturer_part_number_verified",
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14",
+      "SRC-INTEL-125H"
+    ],
+    "segment_tags": [
+      "thin_and_light",
+      "student",
+      "developer_productivity",
+      "creator_entry"
+    ],
+    "facts": {
+      "processor": {
+        "model": "Intel Core Ultra 5 125H",
+        "cores": 14,
+        "performance_cores": 4,
+        "efficient_cores": 8,
+        "low_power_efficient_cores": 2,
+        "threads": 18,
+        "max_turbo_GHz": 4.5,
+        "cache_MB": 18
+      },
+      "graphics": {
+        "model": "Intel Arc Graphics",
+        "type": "integrated",
+        "xe_cores": 7,
+        "memory": "shared"
+      },
+      "memory": {
+        "capacity_GB": 16,
+        "type": "LPDDR5X",
+        "maximum_supported_GB": 32
+      },
+      "storage": {
+        "capacity_GB": 512,
+        "type": "SSD",
+        "interface": "PCIe 4.0"
+      },
+      "display": {
+        "diagonal_inch": 14,
+        "resolution": "2880x1800",
+        "panel": "OLED",
+        "refresh_rate_Hz": 90,
+        "color_gamut": "100% DCI-P3",
+        "hdr_certification": "VESA DisplayHDR True Black 500",
+        "aspect_ratio": "16:10",
+        "touch": false
+      },
+      "battery": {
+        "capacity_Wh": 65,
+        "chemistry": "Lithium-Ion"
+      },
+      "weight_kg": 1.3,
+      "wireless": {
+        "wifi": "Wi-Fi 7 (802.11be)",
+        "wireless_card": "Killer 1750x",
+        "bluetooth": "5.3 or above"
+      },
+      "ports": [
+        "2x USB Type-A",
+        "2x USB4 Type-C",
+        "1x HDMI"
+      ],
+      "operating_system": "Windows 11 Home Single Language",
+      "keyboard": {
+        "backlit": true
+      },
+      "fingerprint_reader": true,
+      "power_adapter": {
+        "maximum_power_W": 100
+      }
+    },
+    "unknown_or_unresolved_fields": [
+      "Acer page does not state actual sustained CPU package power under this laptop thermal profile",
+      "exact SSD manufacturer/controller not published",
+      "Acer page lists Bluetooth 5.3 or above, not a single exact controller revision",
+      "physical memory slot/layout and upgrade path are not explicitly specified on the retrieved Acer page"
+    ],
+    "merchant_price_inr": null,
+    "merchant_stock_on_hand": null,
+    "recommendation_eligible": true,
+    "eligibility_reason": "Acer India page identifies exact model SFG14-73-53CL and part NX.KSGSI.001 and publishes the listed hardware configuration."
+  }
+]

@@ -1,0 +1,97 @@
+revenuemate/
+├── ARCHITECTURE.md
+├── README.md
+├── Makefile
+├── docker-compose.yml
+├── .env.example
+├── data/
+│   ├── databases/
+│   │   ├── laptop_reference.sqlite        # REAL laptop model/variant facts + sources; no merchant stock
+│   │   └── hardware_knowledge.sqlite      # REAL component facts + product-component links
+│   └── reference/
+│       ├── laptop_catalogue.json
+│       ├── product_families.json
+│       ├── family_only_profiles.json
+│       ├── hardware_components.json
+│       ├── product_component_links.json
+│       ├── source_registry.json
+│       ├── evidence_map.json
+│       ├── merchant_offer_template.json   # deliberately empty; shop must fill this
+│       ├── dataset_summary.json
+│       ├── README.md
+│       └── validate_reference_databases.py
+├── backend/
+│   ├── requirements.txt
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── db.py
+│   │   ├── deps.py
+│   │   ├── ai/
+│   │   │   ├── conversation_manager.py       # NEW TODO
+│   │   │   ├── intent_parser.py              # NEW TODO
+│   │   │   ├── recommendation_agent.py       # NEW TODO
+│   │   │   └── response_generator.py         # NEW TODO
+│   │   ├── product_intelligence/
+│   │   │   ├── researcher.py                 # NEW TODO
+│   │   │   ├── specification_extractor.py    # NEW TODO
+│   │   │   ├── source_validator.py           # NEW TODO
+│   │   │   ├── knowledge_indexer.py          # NEW TODO
+│   │   │   └── compatibility_engine.py       # NEW TODO
+│   │   ├── adapters/
+│   │   │   ├── messaging/
+│   │   │   └── payments/
+│   │   ├── api/
+│   │   │   ├── leads.py
+│   │   │   ├── drafts.py
+│   │   │   ├── catalogue.py
+│   │   │   ├── payments.py
+│   │   │   ├── orders.py
+│   │   │   ├── reservations.py
+│   │   │   ├── fulfillment.py
+│   │   │   └── webhooks.py
+│   │   ├── models/
+│   │   │   ├── lead.py
+│   │   │   ├── product.py
+│   │   │   ├── order.py
+│   │   │   ├── order_item.py
+│   │   │   ├── reservation.py
+│   │   │   └── fulfillment.py
+│   │   ├── schemas/
+│   │   │   ├── order.py
+│   │   │   ├── reservation.py
+│   │   │   ├── fulfillment.py
+│   │   │   └── recommendation.py              # NEW TODO
+│   │   ├── services/
+│   │   │   ├── lead_service.py
+│   │   │   ├── stock_service.py
+│   │   │   ├── payment_service.py
+│   │   │   ├── order_service.py
+│   │   │   ├── reservation_service.py
+│   │   │   ├── fulfillment_service.py
+│   │   │   ├── product_search_service.py      # NEW TODO
+│   │   │   ├── recommendation_service.py      # NEW TODO
+│   │   │   └── product_knowledge_service.py   # NEW TODO
+│   │   └── seed/
+│   └── tests/
+├── frontend/
+│   └── src/
+│       ├── app/
+│       │   ├── orders/
+│       │   └── reception/
+│       ├── components/
+│       │   ├── OrderCard.tsx
+│       │   ├── ReservationLookup.tsx
+│       │   └── FulfillmentPanel.tsx
+│       ├── hooks/
+│       └── lib/
+└── docs/
+    ├── P1_CONTEXT.md
+    ├── statuses-and-events.md
+    ├── api-contract.md
+    ├── demo-script.md
+    ├── product-intelligence.md
+    ├── data-provenance.md
+    └── folder-tree.txt
+
+Note: This is an architecture scaffold. Files marked NEW TODO define planned modules; they are not complete application code. Databases are populated reference data, not merchant inventory.
