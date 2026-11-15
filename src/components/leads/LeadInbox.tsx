@@ -9,12 +9,9 @@ import {
   Footprints,
   Globe,
   Clock,
-  Sparkles,
-  ShieldCheck,
   Ban,
-  CheckCircle2,
 } from 'lucide-react';
-import { MessageChannel, LeadStatus } from '@/types';
+import { MessageChannel } from '@/types';
 
 export function LeadInbox() {
   const {
@@ -70,18 +67,18 @@ export function LeadInbox() {
   });
 
   return (
-    <div className="flex flex-col h-full bg-[#191A1E] border border-white/[0.07] rounded-[32px] p-5">
+    <div className="flex flex-col h-full bg-white border border-[#FF5E3A]/15 rounded-[32px] p-5 shadow-[0_10px_30px_rgba(220,75,40,0.06)]">
       {/* Header & Filter Pills */}
-      <div className="flex flex-col gap-3 pb-4 border-b border-white/[0.06]">
+      <div className="flex flex-col gap-3 pb-4 border-b border-[#FF5E3A]/10">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <h3 className="font-black text-sm uppercase tracking-wider text-white">Lead Inbox</h3>
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#6B5CE7]/20 text-[#6B5CE7] border border-[#6B5CE7]/30">
+            <h3 className="font-black text-sm uppercase tracking-wider text-[#291A17]">Lead Inbox</h3>
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FFEAE3] text-[#FF5E3A] border border-[#FF5E3A]/25">
               {filteredLeads.length} leads
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 font-mono">
-            <Clock className="w-3 h-3" />
+          <div className="flex items-center gap-1.5 text-[11px] text-[#806761] font-mono">
+            <Clock className="w-3 h-3 text-[#FF5E3A]" />
             <span>Sorted by urgency</span>
           </div>
         </div>
@@ -99,10 +96,10 @@ export function LeadInbox() {
             <button
               key={item.id}
               onClick={() => setFilterStatus(item.id)}
-              className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
                 filterStatus === item.id
-                  ? 'bg-white text-zinc-950 font-bold shadow-sm'
-                  : 'bg-[#22242A] hover:bg-zinc-800 text-zinc-400 hover:text-white'
+                  ? 'bg-gradient-to-r from-[#FF5E3A] to-[#FF8367] text-white shadow-sm'
+                  : 'bg-[#FFF0EB] hover:bg-[#FFEAE3] text-[#806761] hover:text-[#291A17]'
               }`}
             >
               {item.label}
@@ -112,23 +109,23 @@ export function LeadInbox() {
 
         {/* Priority Filters */}
         <div className="flex items-center gap-2 pt-1">
-          <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+          <span className="text-[10px] font-bold text-[#806761] uppercase tracking-widest">
             Priority:
           </span>
           {['ALL', 'HIGH', 'MEDIUM', 'LOW'].map((p) => (
             <button
               key={p}
               onClick={() => setFilterPriority(p)}
-              className={`px-2.5 py-0.5 rounded-lg text-[10px] font-bold transition-all ${
+              className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all ${
                 filterPriority === p
                   ? p === 'HIGH'
-                    ? 'bg-[#EE7A5C] text-zinc-950'
+                    ? 'bg-[#FFEAE3] text-[#E24823] border border-[#FF5E3A]/30'
                     : p === 'MEDIUM'
-                    ? 'bg-[#F7B955] text-zinc-950'
+                    ? 'bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/30'
                     : p === 'LOW'
-                    ? 'bg-zinc-700 text-white'
-                    : 'bg-white text-zinc-950'
-                  : 'text-zinc-500 hover:text-zinc-300'
+                    ? 'bg-[#FDF9F7] text-[#806761] border border-[#FF5E3A]/15'
+                    : 'bg-[#291A17] text-white'
+                  : 'text-[#806761] hover:text-[#291A17]'
               }`}
             >
               {p}
@@ -140,14 +137,14 @@ export function LeadInbox() {
       {/* Leads List */}
       <div className="flex-1 overflow-y-auto space-y-2 mt-3 pr-1">
         {filteredLeads.length === 0 ? (
-          <div className="py-12 text-center text-zinc-500">
-            <p className="text-xs font-semibold text-zinc-300">No leads match this filter</p>
+          <div className="py-12 text-center text-[#806761]">
+            <p className="text-xs font-semibold text-[#291A17]">No leads match this filter</p>
             <button
               onClick={() => {
                 setFilterStatus('ALL');
                 setFilterPriority('ALL');
               }}
-              className="mt-3 px-3 py-1 rounded-xl bg-[#22242A] text-xs text-zinc-300"
+              className="mt-3 px-3 py-1 rounded-full bg-[#FFF0EB] text-xs font-bold text-[#FF5E3A]"
             >
               Reset Filters
             </button>
@@ -163,21 +160,21 @@ export function LeadInbox() {
                 onClick={() => setSelectedLeadId(lead.id)}
                 className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left relative overflow-hidden ${
                   isSelected
-                    ? 'bg-[#22242A] border-[#6B5CE7]/60 shadow-md ring-1 ring-[#6B5CE7]/30'
-                    : 'bg-[#141518]/60 border-white/[0.04] hover:bg-[#22242A]/50 hover:border-white/10'
+                    ? 'bg-[#FFF0EB] border-[#FF5E3A]/40 shadow-sm ring-1 ring-[#FF5E3A]/30'
+                    : 'bg-white border-[#FF5E3A]/10 hover:bg-[#FFF3EE]/70 hover:border-[#FF5E3A]/20'
                 }`}
               >
                 {/* Active indicator bar */}
                 {isSelected && (
-                  <span className="absolute left-0 top-0 bottom-0 w-1 bg-[#6B5CE7]" />
+                  <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#FF5E3A]" />
                 )}
 
                 {/* Top Row: Name, Channel, and Priority */}
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <div className="flex items-center gap-2 truncate">
-                    <span className="font-bold text-xs text-white truncate">{lead.name}</span>
-                    <span className="inline-flex items-center gap-1 text-[10px] text-zinc-400">
-                      <ChannelIcon className="w-3 h-3 text-[#6B5CE7] shrink-0" />
+                    <span className="font-bold text-xs text-[#291A17] truncate">{lead.name}</span>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-[#806761]">
+                      <ChannelIcon className="w-3 h-3 text-[#FF5E3A] shrink-0" />
                       <span>{channelLabels[lead.channel]}</span>
                     </span>
                   </div>
@@ -186,12 +183,12 @@ export function LeadInbox() {
 
                 {/* Middle Row: Product & Price */}
                 {lead.interestedProductName && (
-                  <div className="flex items-center justify-between text-xs text-zinc-300 mb-1.5">
-                    <span className="truncate text-zinc-300 font-medium max-w-[180px]">
+                  <div className="flex items-center justify-between text-xs text-[#806761] mb-1.5">
+                    <span className="truncate text-[#291A17] font-semibold max-w-[180px]">
                       {lead.interestedProductName}
                     </span>
                     {lead.quotedAmount && (
-                      <span className="font-bold text-white shrink-0 ml-2 font-mono">
+                      <span className="font-black text-[#291A17] shrink-0 ml-2 font-mono">
                         ₹{lead.quotedAmount.toLocaleString('en-IN')}
                       </span>
                     )}
@@ -199,38 +196,38 @@ export function LeadInbox() {
                 )}
 
                 {/* Priority Rationale Snippet */}
-                <div className="p-2 rounded-xl bg-black/40 border border-white/[0.03] text-[10px] text-zinc-400 mb-2 leading-relaxed">
-                  <span className="font-bold text-[#F7B955]">Why Priority: </span>
+                <div className="p-2 rounded-xl bg-[#FFF3EE] border border-[#FF5E3A]/10 text-[10px] text-[#806761] mb-2 leading-relaxed">
+                  <span className="font-bold text-[#E24823]">Why Priority: </span>
                   {lead.priorityRationale}
                 </div>
 
                 {/* Status Pills & Flags */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-white/[0.04] text-[10px]">
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-[#FF5E3A]/10 text-[10px]">
                   <div className="flex items-center gap-1.5">
                     {lead.status === 'APPROVAL_PENDING' && (
-                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#F7B955]/20 text-[#F7B955] border border-[#F7B955]/30">
+                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/30">
                         Approval Due
                       </span>
                     )}
                     {lead.status === 'PAYMENT_PENDING' && (
-                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#EE7A5C]/20 text-[#EE7A5C] border border-[#EE7A5C]/30">
+                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#FFEAE3] text-[#E24823] border border-[#FF5E3A]/30">
                         Payment Pending
                       </span>
                     )}
                     {lead.status === 'SALE_RECORDED' && (
-                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#94CCA0]/20 text-[#94CCA0] border border-[#94CCA0]/30">
+                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/30">
                         Sale Recorded
                       </span>
                     )}
                     {lead.isFollowupSuppressed && (
-                      <span className="px-2 py-0.5 rounded-full font-bold bg-zinc-800 text-zinc-300 border border-zinc-700 flex items-center gap-1">
-                        <Ban className="w-2.5 h-2.5 text-[#EE7A5C]" />
+                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#FDF9F7] text-[#806761] border border-[#FF5E3A]/15 flex items-center gap-1">
+                        <Ban className="w-2.5 h-2.5 text-[#FF5E3A]" />
                         Suppressed
                       </span>
                     )}
                   </div>
 
-                  <span className="text-zinc-500 font-mono text-[9px]">{lead.lastActiveAt}</span>
+                  <span className="text-[#806761] font-mono text-[9px]">{lead.lastActiveAt}</span>
                 </div>
               </div>
             );

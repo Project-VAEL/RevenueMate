@@ -26,7 +26,6 @@ export function LeadDetail() {
     selectedLead,
     products,
     approvals,
-    payments,
     approveRequest,
     rejectRequest,
     generatePaymentLink,
@@ -41,10 +40,10 @@ export function LeadDetail() {
 
   if (!selectedLead) {
     return (
-      <div className="flex flex-col items-center justify-center h-full bg-[#191A1E] border border-white/[0.07] rounded-[32px] p-8 text-center text-zinc-500">
-        <MessageSquare className="w-10 h-10 text-zinc-600 mb-2" />
-        <h3 className="font-bold text-white text-sm">Select a Lead from the Inbox</h3>
-        <p className="text-xs text-zinc-500 mt-1 max-w-sm">
+      <div className="flex flex-col items-center justify-center h-full bg-white border border-[#FF5E3A]/15 rounded-[32px] p-8 text-center text-[#806761] shadow-[0_10px_30px_rgba(220,75,40,0.06)]">
+        <MessageSquare className="w-10 h-10 text-[#FF8367] mb-2" />
+        <h3 className="font-bold text-[#291A17] text-sm">Select a Lead from the Inbox</h3>
+        <p className="text-xs text-[#806761] mt-1 max-w-sm">
           Click on any customer in the inbox to inspect conversation timeline, stock
           availability, and execute next workflow actions.
         </p>
@@ -59,9 +58,6 @@ export function LeadDetail() {
   const pendingApproval = approvals.find(
     (a) => a.leadId === selectedLead.id && a.status === 'PENDING'
   );
-
-  // Find payment record if any
-  const paymentRecord = payments.find((p) => p.id === selectedLead.paymentId);
 
   const channelIcons: Record<MessageChannel, React.ElementType> = {
     WHATSAPP: MessageSquare,
@@ -79,34 +75,34 @@ export function LeadDetail() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#191A1E] border border-white/[0.07] rounded-[32px] p-5 overflow-hidden">
+    <div className="flex flex-col h-full bg-white border border-[#FF5E3A]/15 rounded-[32px] p-5 overflow-hidden shadow-[0_10px_30px_rgba(220,75,40,0.06)]">
       {/* 1. Header: Customer Information & Action Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-white/[0.06]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-[#FF5E3A]/10">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-lg font-black text-white tracking-tight">
+            <h2 className="text-lg font-black text-[#291A17] tracking-tight">
               {selectedLead.name}
             </h2>
             <PriorityBadge priority={selectedLead.priority} />
             {selectedLead.isFollowupSuppressed && (
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-zinc-800 text-zinc-300 border border-zinc-700 flex items-center gap-1">
-                <Ban className="w-3 h-3 text-[#EE7A5C]" />
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FDF9F7] text-[#806761] border border-[#FF5E3A]/15 flex items-center gap-1">
+                <Ban className="w-3 h-3 text-[#FF5E3A]" />
                 Suppressed
               </span>
             )}
           </div>
-          <div className="flex items-center gap-2.5 text-xs text-zinc-400 mt-1">
+          <div className="flex items-center gap-2.5 text-xs text-[#806761] mt-1">
             <span className="flex items-center gap-1">
-              <Phone className="w-3 h-3 text-zinc-500" />
+              <Phone className="w-3 h-3 text-[#FF5E3A]" />
               {selectedLead.phone}
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1">
-              <ChannelIcon className="w-3 h-3 text-[#6B5CE7]" />
+            <span className="flex items-center gap-1 font-semibold text-[#291A17]">
+              <ChannelIcon className="w-3 h-3 text-[#FF5E3A]" />
               {selectedLead.channel}
             </span>
             <span>•</span>
-            <span className="text-zinc-500 font-mono text-[10px]">
+            <span className="text-[#806761] font-mono text-[10px]">
               {selectedLead.createdAt}
             </span>
           </div>
@@ -117,7 +113,7 @@ export function LeadDetail() {
           {selectedLead.status !== 'SALE_RECORDED' && (
             <button
               onClick={() => setIsOfflineSaleModalOpen(true)}
-              className="px-3 py-1.5 rounded-xl bg-[#94CCA0] hover:bg-[#A5DDB1] text-zinc-950 font-black text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+              className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#FF5E3A] to-[#FF8367] hover:from-[#E24823] hover:to-[#FF5E3A] text-white font-bold text-xs flex items-center gap-1.5 transition-colors shadow-[0_4px_14px_rgba(255,94,58,0.25)]"
               title="Record Cash/UPI purchase to complete sale & suppress follow-ups"
             >
               <PlusCircle className="w-3.5 h-3.5" />
@@ -130,7 +126,7 @@ export function LeadDetail() {
               onClick={() =>
                 generatePaymentLink(selectedLead.id, selectedLead.quotedAmount || 2500)
               }
-              className="px-3 py-1.5 rounded-xl bg-[#6B5CE7]/20 hover:bg-[#6B5CE7]/30 text-purple-300 border border-[#6B5CE7]/40 text-xs font-bold flex items-center gap-1.5 transition-colors"
+              className="px-3 py-1.5 rounded-full bg-[#FFEAE3] hover:bg-[#FFD4C7] text-[#FF5E3A] border border-[#FF5E3A]/30 text-xs font-bold flex items-center gap-1.5 transition-colors"
             >
               <CreditCard className="w-3.5 h-3.5" />
               <span>UPI Link</span>
@@ -140,7 +136,7 @@ export function LeadDetail() {
           {selectedLead.status !== 'LOST' && selectedLead.status !== 'SALE_RECORDED' && (
             <button
               onClick={() => markLeadLost(selectedLead.id, 'Customer unresponsive')}
-              className="px-2.5 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 text-xs font-medium transition-colors"
+              className="px-2.5 py-1.5 rounded-full bg-[#FFF0EB] hover:bg-[#FFEAE3] text-[#806761] hover:text-[#291A17] text-xs font-semibold transition-colors"
             >
               Lost
             </button>
@@ -151,41 +147,41 @@ export function LeadDetail() {
       {/* 2. Priority Rationale + Stock Check Helper */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-3">
         {/* Visible Explanation for Priority */}
-        <div className="p-3.5 rounded-2xl bg-[#141518] border border-white/[0.05] flex flex-col justify-between">
+        <div className="p-3.5 rounded-2xl bg-[#FFF3EE] border border-[#FF5E3A]/15 flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between text-[10px] font-bold text-zinc-400 mb-1">
+            <div className="flex items-center justify-between text-[10px] font-bold text-[#806761] mb-1">
               <span className="uppercase tracking-widest">AI Priority Explanation</span>
-              <span className="text-[#6B5CE7] font-mono">RULE ENGINE</span>
+              <span className="text-[#FF5E3A] font-mono font-bold">RULE ENGINE</span>
             </div>
-            <p className="text-xs text-zinc-200 leading-relaxed font-medium">
+            <p className="text-xs text-[#291A17] leading-relaxed font-semibold">
               {selectedLead.priorityRationale}
             </p>
           </div>
-          <p className="text-[10px] text-zinc-500 mt-2 font-mono">
+          <p className="text-[10px] text-[#806761] mt-2 font-mono">
             Scored on: recency, SKU intent &amp; purchase velocity
           </p>
         </div>
 
         {/* Stock Check Helper */}
-        <div className="p-3.5 rounded-2xl bg-[#141518] border border-white/[0.05] flex flex-col justify-between">
+        <div className="p-3.5 rounded-2xl bg-[#FFF3EE] border border-[#FF5E3A]/15 flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between text-[10px] font-bold text-zinc-400 mb-1">
+            <div className="flex items-center justify-between text-[10px] font-bold text-[#806761] mb-1">
               <span className="uppercase tracking-widest flex items-center gap-1.5">
-                <Boxes className="w-3.5 h-3.5 text-[#94CCA0]" />
+                <Boxes className="w-3.5 h-3.5 text-[#2E7D32]" />
                 Live Stock Check Helper
               </span>
               {matchedProduct && (
-                <span className="text-zinc-500 font-mono text-[10px]">{matchedProduct.sku}</span>
+                <span className="text-[#806761] font-mono text-[10px]">{matchedProduct.sku}</span>
               )}
             </div>
 
             {matchedProduct ? (
               <div className="mt-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white truncate max-w-[180px]">
+                  <span className="text-xs font-bold text-[#291A17] truncate max-w-[180px]">
                     {matchedProduct.name}
                   </span>
-                  <span className="text-xs font-black text-white font-mono">
+                  <span className="text-xs font-black text-[#291A17] font-mono">
                     ₹{matchedProduct.price.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -194,41 +190,41 @@ export function LeadDetail() {
                 <div className="flex items-center justify-between mt-2">
                   <div className="flex items-center gap-1.5">
                     {matchedProduct.status === 'IN_STOCK' && (
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#94CCA0]/20 text-[#94CCA0] border border-[#94CCA0]/30">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/30">
                         IN STOCK ({matchedProduct.stockQuantity} units)
                       </span>
                     )}
                     {matchedProduct.status === 'LOW_STOCK' && (
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#F7B955]/20 text-[#F7B955] border border-[#F7B955]/30">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/30">
                         LOW STOCK ({matchedProduct.stockQuantity} unit left)
                       </span>
                     )}
                     {matchedProduct.status === 'OUT_OF_STOCK' && (
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FEE2E2] text-[#DC2626] border border-[#DC2626]/30">
                         OUT OF STOCK
                       </span>
                     )}
                     {matchedProduct.status === 'UNKNOWN' && (
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#F7B955]/20 text-[#F7B955] border border-[#F7B955]/40 flex items-center gap-1">
-                        <AlertTriangle className="w-3 h-3 text-[#F7B955]" />
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/40 flex items-center gap-1">
+                        <AlertTriangle className="w-3 h-3 text-[#D97706]" />
                         STOCK UNKNOWN (Check Shelf)
                       </span>
                     )}
                   </div>
-                  <span className="text-[10px] text-zinc-500 font-mono">
+                  <span className="text-[10px] text-[#806761] font-mono">
                     {matchedProduct.lastCheckedAt}
                   </span>
                 </div>
 
                 {matchedProduct.status === 'UNKNOWN' && (
-                  <div className="mt-2 p-2 rounded-xl bg-[#F7B955]/10 border border-[#F7B955]/20 text-[10px] text-[#F7B955] flex items-center justify-between">
+                  <div className="mt-2 p-2 rounded-xl bg-[#FEF3C7] border border-[#F59E0B]/30 text-[10px] text-[#D97706] flex items-center justify-between">
                     <span>Quotes paused until count verified.</span>
                     <button
                       onClick={() => {
                         setSelectedProductForUpdate(matchedProduct);
                         setIsStockUpdateModalOpen(true);
                       }}
-                      className="px-2 py-0.5 rounded-lg bg-[#F7B955] text-zinc-950 font-bold"
+                      className="px-2.5 py-0.5 rounded-full bg-[#D97706] text-white font-bold"
                     >
                       Verify
                     </button>
@@ -236,12 +232,12 @@ export function LeadDetail() {
                 )}
               </div>
             ) : (
-              <p className="text-xs text-zinc-500 mt-1">
+              <p className="text-xs text-[#806761] mt-1">
                 No specific catalogue SKU matched to this enquiry yet.
               </p>
             )}
           </div>
-          <p className="text-[10px] text-zinc-500 mt-2 font-mono">
+          <p className="text-[10px] text-[#806761] mt-2 font-mono">
             Shelf: {matchedProduct?.rackLocation || 'Front Showcase'}
           </p>
         </div>
@@ -249,39 +245,39 @@ export function LeadDetail() {
 
       {/* 3. Pending Follow-up Approval Card (if any) */}
       {pendingApproval && (
-        <div className="mb-3 p-3.5 rounded-2xl bg-[#F7B955]/10 border border-[#F7B955]/30 text-zinc-200">
+        <div className="mb-3 p-3.5 rounded-2xl bg-[#FEF3C7]/60 border border-[#F59E0B]/35 text-[#291A17]">
           <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#F7B955]" />
-              <span className="text-[10px] font-bold text-[#F7B955] uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#D97706]" />
+              <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-wider">
                 Follow-up Awaiting Approval
               </span>
             </div>
-            <span className="text-[10px] font-mono text-[#F7B955] font-semibold flex items-center gap-1">
+            <span className="text-[10px] font-mono text-[#D97706] font-bold flex items-center gap-1">
               <Clock className="w-3 h-3" />
               38m SLA
             </span>
           </div>
 
-          <p className="text-xs font-bold text-white">{pendingApproval.actionTitle}</p>
-          <div className="p-2.5 my-2 rounded-xl bg-black/50 border border-white/5 text-xs text-zinc-300 font-sans leading-relaxed">
+          <p className="text-xs font-bold text-[#291A17]">{pendingApproval.actionTitle}</p>
+          <div className="p-2.5 my-2 rounded-xl bg-white border border-[#F59E0B]/20 text-xs text-[#291A17] font-sans leading-relaxed">
             &ldquo;{pendingApproval.draftMessage}&rdquo;
           </div>
 
           <div className="flex items-center justify-between text-xs pt-1">
-            <span className="text-[10px] text-zinc-400">
-              Approver: <strong className="text-white">{pendingApproval.approverName}</strong>
+            <span className="text-[10px] text-[#806761]">
+              Approver: <strong className="text-[#291A17]">{pendingApproval.approverName}</strong>
             </span>
             <div className="flex items-center gap-1.5">
               <button
                 onClick={() => rejectRequest(pendingApproval.id, 'Merchant custom follow-up')}
-                className="px-2.5 py-1 rounded-xl bg-[#22242A] hover:bg-zinc-800 text-zinc-300 text-xs font-semibold"
+                className="px-3 py-1 rounded-full bg-[#FFF0EB] hover:bg-[#FFEAE3] text-[#806761] text-xs font-bold"
               >
                 Reject
               </button>
               <button
                 onClick={() => approveRequest(pendingApproval.id)}
-                className="px-3 py-1 rounded-xl bg-[#F7B955] hover:bg-amber-300 text-zinc-950 font-black text-xs shadow-sm"
+                className="px-3.5 py-1 rounded-full bg-gradient-to-r from-[#FF5E3A] to-[#FF8367] text-white font-black text-xs shadow-sm hover:from-[#E24823] hover:to-[#FF5E3A]"
               >
                 ✓ Approve &amp; Send
               </button>
@@ -299,9 +295,9 @@ export function LeadDetail() {
           if (isSystem) {
             return (
               <div key={event.id} className="flex justify-center my-1.5">
-                <div className="max-w-md p-2 rounded-xl bg-[#141518] border border-white/[0.04] text-center">
-                  <p className="text-[10px] text-zinc-400 font-mono leading-relaxed">{event.text}</p>
-                  <span className="text-[9px] text-zinc-600 mt-0.5 block">{event.timestamp}</span>
+                <div className="max-w-md p-2 rounded-xl bg-[#FFF0EB] border border-[#FF5E3A]/15 text-center">
+                  <p className="text-[10px] text-[#806761] font-mono leading-relaxed">{event.text}</p>
+                  <span className="text-[9px] text-[#806761]/70 mt-0.5 block">{event.timestamp}</span>
                 </div>
               </div>
             );
@@ -310,13 +306,13 @@ export function LeadDetail() {
           if (event.type === 'offline_sale') {
             return (
               <div key={event.id} className="flex justify-center my-1.5">
-                <div className="max-w-md p-2.5 rounded-2xl bg-[#94CCA0]/15 border border-[#94CCA0]/40 text-center">
-                  <div className="flex items-center justify-center gap-1.5 text-xs font-black text-[#94CCA0] uppercase">
+                <div className="max-w-md p-2.5 rounded-2xl bg-[#E8F5E9] border border-[#2E7D32]/30 text-center shadow-sm">
+                  <div className="flex items-center justify-center gap-1.5 text-xs font-black text-[#2E7D32] uppercase">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     Offline Sale Confirmed
                   </div>
-                  <p className="text-xs text-white font-medium mt-0.5">{event.text}</p>
-                  <span className="text-[10px] text-[#94CCA0]/80 mt-0.5 block font-mono">
+                  <p className="text-xs text-[#1B4D1F] font-bold mt-0.5">{event.text}</p>
+                  <span className="text-[10px] text-[#2E7D32] mt-0.5 block font-mono font-medium">
                     {event.timestamp} • Follow-ups permanently suppressed
                   </span>
                 </div>
@@ -332,11 +328,11 @@ export function LeadDetail() {
               <div
                 className={`max-w-[85%] rounded-2xl p-3.5 shadow-sm ${
                   isCustomer
-                    ? 'bg-[#22242A] text-white border border-white/[0.06] rounded-tl-sm'
-                    : 'bg-[#6B5CE7] text-white rounded-tr-sm shadow-purple-900/20'
+                    ? 'bg-[#FDF9F7] text-[#291A17] border border-[#FF5E3A]/15 rounded-tl-sm'
+                    : 'bg-gradient-to-r from-[#FF5E3A] to-[#FF8367] text-white rounded-tr-sm shadow-[0_4px_14px_rgba(255,94,58,0.22)]'
                 }`}
               >
-                <div className="flex items-center justify-between gap-3 text-[9px] opacity-75 mb-1 font-mono">
+                <div className="flex items-center justify-between gap-3 text-[9px] opacity-80 mb-1 font-mono">
                   <span className="font-bold">
                     {isCustomer ? selectedLead.name : 'Merchant (Kavita Sharma)'}
                   </span>
@@ -350,18 +346,18 @@ export function LeadDetail() {
       </div>
 
       {/* 5. Message Input & Dispatch Console */}
-      <form onSubmit={handleSendReply} className="pt-2.5 mt-2 border-t border-white/[0.06]">
+      <form onSubmit={handleSendReply} className="pt-2.5 mt-2 border-t border-[#FF5E3A]/10">
         <div className="flex items-center gap-2">
           <input
             type="text"
             value={customReply}
             onChange={(e) => setCustomReply(e.target.value)}
             placeholder={`Reply to ${selectedLead.name} via ${selectedLead.channel}...`}
-            className="flex-1 bg-[#141518] border border-white/10 rounded-2xl px-4 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#6B5CE7] transition-colors"
+            className="flex-1 bg-[#FFF0EB] border border-[#FF5E3A]/20 rounded-full px-4 py-2 text-xs text-[#291A17] placeholder-[#806761] focus:outline-none focus:border-[#FF5E3A] focus:ring-1 focus:ring-[#FF5E3A]/30 transition-all"
           />
           <button
             type="submit"
-            className="px-4 py-2 rounded-2xl bg-[#6B5CE7] hover:bg-[#5848DA] text-white font-bold text-xs transition-colors flex items-center gap-1.5 shrink-0"
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-[#FF5E3A] to-[#E24823] hover:from-[#E24823] hover:to-[#FF5E3A] text-white font-bold text-xs transition-transform hover:scale-105 flex items-center gap-1.5 shrink-0 shadow-[0_4px_14px_rgba(255,94,58,0.28)]"
           >
             <span>Send</span>
             <Send className="w-3.5 h-3.5" />

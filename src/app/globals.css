@@ -2,37 +2,54 @@
 
 @layer base {
   :root {
-    --bg-backdrop: #1D1E22;
-    --bg-frame: #0F1013;
-    --card-surface: #191A1E;
-    --card-surface-elevated: #22242A;
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-strong: rgba(255, 255, 255, 0.14);
+    /* Krishi-Rakshak warm terracotta, peach & espresso palette */
+    --color-primary: #FF5E3A;
+    --color-primary-dark: #E24823;
+    --color-primary-light: #FF8367;
+    --color-primary-subtle: #FFEAE3;
+    --color-primary-badge: #FFD4C7;
+    --color-bg: #FFF3EE;
+    --color-bg-mesh: radial-gradient(circle at 10% 10%, #FFE5DC 0%, #FFF4EF 45%, #FEEBE3 100%);
+    --color-bg-outer: radial-gradient(circle at 50% 20%, #FEE0D5 0%, #FAD7CB 50%, #F4CBC0 100%);
+    --color-surface: #FFFFFF;
+    --color-surface-subtle: #FDF9F7;
+    --color-surface-tint: #FFF0EB;
+    --color-text: #291A17;
+    --color-text-muted: #806761;
+    --color-text-light: #A48E89;
+    --color-border: rgba(255, 94, 58, 0.14);
+    --color-border-subtle: rgba(41, 26, 23, 0.08);
 
-    /* Reference image exact pastel & neo-brutalist palette */
-    --c-purple: #6B5CE7;
-    --c-purple-dark: #5848DA;
-    --c-purple-pill: #473B9F;
+    --radius-full: 9999px;
+    --radius-xl: 30px;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
 
-    --c-yellow: #F7B955;
-    --c-yellow-dark: #E2A33E;
-    --c-yellow-pill: #D89832;
+    --shadow-card: 0 10px 30px rgba(220, 75, 40, 0.06), 0 2px 8px rgba(41, 26, 23, 0.03);
+    --shadow-card-hover: 0 14px 36px rgba(220, 75, 40, 0.12), 0 4px 12px rgba(41, 26, 23, 0.05);
+    --shadow-glow: 0 8px 24px rgba(255, 94, 58, 0.28);
+    --shadow-dock: 0 16px 40px rgba(50, 30, 25, 0.14), 0 2px 10px rgba(0, 0, 0, 0.04);
 
-    --c-coral: #EE7A5C;
-    --c-coral-dark: #D86345;
-    --c-coral-pill: #CF5638;
+    --glass: rgba(255, 255, 255, 0.90);
+    --glass-tint: rgba(255, 243, 238, 0.85);
 
-    --c-mint: #94CCA0;
-    --c-mint-light: #A5DDB1;
-    --c-mint-dark: #7DBB8B;
-    --c-mint-pill: #6BA879;
-
-    --c-dark-card: #191A1E;
+    /* Stage & status accents */
+    --c-green: #2E7D32;
+    --c-green-light: #E8F5E9;
+    --c-amber: #D97706;
+    --c-amber-light: #FEF3C7;
+    --c-coral: #FF5E3A;
+    --c-coral-light: #FFEAE3;
+    --c-red: #DC2626;
+    --c-red-light: #FEE2E2;
   }
 
   body {
-    background-color: var(--bg-backdrop);
-    color: #FFFFFF;
+    background: var(--color-bg);
+    background-image: var(--color-bg-outer);
+    background-attachment: fixed;
+    color: var(--color-text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -40,20 +57,20 @@
   }
 }
 
-/* Custom rounded pill scrollbar matching reference */
+/* Custom rounded pill scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #141518;
+  background: #FFF3EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2B2D34;
+  background: #FFD4C7;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3E414B;
+  background: #FF8367;
 }
 
 /* Tabular numbers for clean financial alignment */

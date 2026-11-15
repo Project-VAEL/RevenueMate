@@ -20,9 +20,9 @@ function DashboardContent() {
   const { activeView } = useStore();
 
   return (
-    <div className="min-h-screen bg-[#1D1E22] flex items-center justify-center p-0 md:p-4 lg:p-6 select-none font-sans">
-      {/* Outer Rounded Tablet Frame matching reference image */}
-      <div className="w-full max-w-[1480px] bg-[#0F1013] border border-white/[0.08] rounded-none md:rounded-[36px] shadow-2xl overflow-hidden flex min-h-[920px]">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_50%_20%,#FEE0D5_0%,#FAD7CB_50%,#F4CBC0_100%)] flex items-center justify-center p-0 md:p-4 lg:p-6 select-none font-sans text-[#291A17]">
+      {/* Outer Rounded Tablet/Desktop Frame with Krishi-Rakshak warm theme */}
+      <div className="w-full max-w-[1520px] bg-[#FFF3EE] border border-[#FF5E3A]/20 rounded-none md:rounded-[40px] shadow-[0_25px_60px_rgba(35,20,15,0.18)] overflow-hidden flex min-h-[920px]">
         {/* 1. Left Minimalist Geometric Sidebar */}
         <Sidebar />
 

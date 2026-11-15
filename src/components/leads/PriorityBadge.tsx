@@ -12,17 +12,17 @@ export function PriorityBadge({
   const meta = {
     HIGH: {
       label: 'HIGH PRIORITY',
-      bg: 'bg-[#EE7A5C]/20 text-[#EE7A5C] border-[#EE7A5C]/40',
+      bg: 'bg-[#FFEAE3] text-[#E24823] border-[#FF5E3A]/35 shadow-sm',
       icon: Zap,
     },
     MEDIUM: {
       label: 'MEDIUM PRIORITY',
-      bg: 'bg-[#F7B955]/20 text-[#F7B955] border-[#F7B955]/40',
+      bg: 'bg-[#FEF3C7] text-[#D97706] border-[#F59E0B]/35 shadow-sm',
       icon: AlertCircle,
     },
     LOW: {
       label: 'LOW PRIORITY',
-      bg: 'bg-zinc-800 text-zinc-400 border-zinc-700',
+      bg: 'bg-[#FDF9F7] text-[#806761] border-[#FF5E3A]/15',
       icon: ArrowDown,
     },
   };
