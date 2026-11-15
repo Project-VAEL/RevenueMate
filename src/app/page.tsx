@@ -15,9 +15,10 @@ import { PaymentStatusView } from '@/components/payments/PaymentStatusView';
 import { RecordOfflineSaleModal } from '@/components/offline/RecordOfflineSaleModal';
 import { StockUpdateModal } from '@/components/catalogue/StockUpdateModal';
 import { DemoGuideModal } from '@/components/common/DemoGuideModal';
+import { WorkflowStepBanner } from '@/components/common/WorkflowStepBanner';
 
 function DashboardContent() {
-  const { activeView } = useStore();
+  const { activeView, setActiveView } = useStore();
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_50%_20%,#FEE0D5_0%,#FAD7CB_50%,#F4CBC0_100%)] flex items-center justify-center p-0 md:p-4 lg:p-6 select-none font-sans text-[#291A17]">
@@ -31,37 +32,56 @@ function DashboardContent() {
           {/* Top Header */}
           <TopHeader />
 
-          <main className="flex-1 flex flex-col gap-5 mt-3">
-            {/* Top Row: Prominent 4 Bento Summary Cards + Hero Balance */}
-            <MetricsGrid />
-
-            {/* Main Stage & Right Panel Asymmetrical Layout matching reference */}
-            <div className="flex flex-col xl:flex-row gap-4 flex-1 items-start mt-1">
-              {/* Center Stage: Views */}
-              <div className="flex-1 w-full min-w-0">
-                {activeView === 'pipeline' && <PipelineOverview />}
-
-                {activeView === 'inbox' && (
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-full items-start">
-                    <div className="lg:col-span-5 h-[720px]">
-                      <LeadInbox />
-                    </div>
-                    <div className="lg:col-span-7 h-[720px]">
-                      <LeadDetail />
-                    </div>
+          <main className="flex-1 flex flex-col gap-4 mt-2">
+            {/* VIEW 1: Pipeline Overview - Master Bento Dashboard with Center Stage + Right Panel */}
+            {activeView === 'pipeline' && (
+              <>
+                <MetricsGrid />
+                <div className="flex flex-col xl:flex-row gap-4 flex-1 items-start mt-1">
+                  <div className="flex-1 w-full min-w-0">
+                    <PipelineOverview />
                   </div>
-                )}
+                  <RightPanel />
+                </div>
+              </>
+            )}
 
-                {activeView === 'catalogue' && <StockCatalogue />}
-
-                {activeView === 'approvals' && <ApprovalPanel />}
-
-                {activeView === 'payments' && <PaymentStatusView />}
+            {/* VIEW 2: Lead Inbox & Detail - Full Width Split Screen with Step Banner */}
+            {activeView === 'inbox' && (
+              <div className="space-y-4">
+                <WorkflowStepBanner
+                  stepNumber={1}
+                  stageName="CUSTOMER ENQUIRIES & LIVE TIMELINE"
+                  title="Incoming Laptop Enquiries & Intent Evaluation"
+                  description="Vale Enterprises Lead Inbox: Select an enquiry on the left to see customer WhatsApp chat, check stock on showroom shelves, or authorize special quotations."
+                  primaryActionLabel="View Stock Catalogue"
+                  onPrimaryAction={() => setActiveView('catalogue')}
+                />
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+                  <div className="lg:col-span-5 xl:col-span-4 min-h-[760px] h-[760px]">
+                    <LeadInbox />
+                  </div>
+                  <div className="lg:col-span-7 xl:col-span-8 min-h-[760px] h-[760px]">
+                    <LeadDetail />
+                  </div>
+                </div>
               </div>
+            )}
 
-              {/* Right-Side Panel: Stacked Channels + Big Mint Green Panel */}
-              <RightPanel />
-            </div>
+            {/* VIEW 3: Stock Catalogue - Full Width Product Grid */}
+            {activeView === 'catalogue' && (
+              <StockCatalogue />
+            )}
+
+            {/* VIEW 4: Approvals - Full Width Owner Sign-Off Queue */}
+            {activeView === 'approvals' && (
+              <ApprovalPanel />
+            )}
+
+            {/* VIEW 5: Payments - Full Width Settlement Ledger */}
+            {activeView === 'payments' && (
+              <PaymentStatusView />
+            )}
           </main>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useStore } from '@/context/StoreContext';
-import { Search, Bell, Sparkles, RotateCcw, Laptop } from 'lucide-react';
+import { Search, Bell, Sparkles, RotateCcw, PlusCircle, Store } from 'lucide-react';
 
 export function TopHeader() {
   const {
@@ -11,6 +11,7 @@ export function TopHeader() {
     simulateIncomingEnquiry,
     resetDemoData,
     systemNotification,
+    setIsOfflineSaleModalOpen,
   } = useStore();
 
   return (
@@ -31,11 +32,21 @@ export function TopHeader() {
         </div>
 
         {/* Right Side: Demo controls, Notifications, Greeting & Avatar */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          {/* Quick Record Walk-in Sale */}
+          <button
+            onClick={() => setIsOfflineSaleModalOpen(true)}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#FF5E3A] to-[#FF8367] hover:from-[#E24823] hover:to-[#FF5E3A] text-white text-[11px] font-black tracking-wide transition-all shadow-[0_4px_14px_rgba(255,94,58,0.25)]"
+            title="Record walk-in cash/UPI sale & auto-suppress follow-ups"
+          >
+            <PlusCircle className="w-3.5 h-3.5" />
+            <span>+ Record Walk-in Sale</span>
+          </button>
+
           {/* Quick Simulate Lead */}
           <button
             onClick={simulateIncomingEnquiry}
-            className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FFEAE3] hover:bg-[#FFD4C7] text-[#E24823] border border-[#FF5E3A]/30 text-[11px] font-bold tracking-wide transition-all shadow-sm"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFEAE3] hover:bg-[#FFD4C7] text-[#E24823] border border-[#FF5E3A]/30 text-[11px] font-bold tracking-wide transition-all shadow-sm"
             title="Simulate incoming WhatsApp enquiry for a laptop"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#FF5E3A]" />
