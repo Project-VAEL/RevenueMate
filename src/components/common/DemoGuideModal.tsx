@@ -28,7 +28,7 @@ export function DemoGuideModal() {
               RevenueMate Prototype &amp; Evaluation Guide
             </h2>
             <p className="text-xs text-[#806761]">
-              Interactive merchant-facing dashboard prototype for small retail businesses
+              Interactive merchant-facing dashboard prototype for Vale Enterprises (Commercial &amp; Gaming Laptops)
             </p>
           </div>
         </div>

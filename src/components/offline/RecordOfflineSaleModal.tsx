@@ -116,7 +116,7 @@ export function RecordOfflineSaleModal() {
           </div>
           <div>
             <h3 className="font-black text-base text-[#291A17] tracking-tight">Record In-Store Offline Sale</h3>
-            <p className="text-xs text-[#806761]">Direct Counter UPI QR, Store Cash, or POS Swipes</p>
+            <p className="text-xs text-[#806761]">Direct Counter UPI QR, Store Cash, or POS Swipes (Vale Enterprises)</p>
           </div>
         </div>
 

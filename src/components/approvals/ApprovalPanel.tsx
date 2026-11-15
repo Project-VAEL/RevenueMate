@@ -8,11 +8,16 @@ import {
   XCircle,
   Ban,
   User,
+  MessageSquare,
+  ShieldCheck,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 export function ApprovalPanel() {
   const { approvals, approveRequest, rejectRequest, setSelectedLeadId, setActiveView } = useStore();
   const [filter, setFilter] = useState<'ALL' | 'PENDING' | 'APPROVED' | 'SUPPRESSED'>('ALL');
+  const [expandedPayloadId, setExpandedPayloadId] = useState<string | null>(null);
 
   const filteredApprovals = approvals.filter((a) => {
     if (filter === 'PENDING') return a.status === 'PENDING';
@@ -30,7 +35,7 @@ export function ApprovalPanel() {
 
   return (
     <div className="flex flex-col h-full bg-white border border-[#FF5E3A]/15 rounded-[32px] p-5 md:p-6 space-y-4 shadow-[0_10px_30px_rgba(220,75,40,0.06)]">
-      {/* 1. Header */}
+      {/* 1. Header with Store Identity */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-[#FF5E3A]/10">
         <div>
           <div className="flex items-center gap-2">
@@ -40,16 +45,16 @@ export function ApprovalPanel() {
             </h2>
             {pendingCount > 0 && (
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/35">
-                {pendingCount} AWAITING
+                {pendingCount} AWAITING SIGN-OFF
               </span>
             )}
           </div>
           <p className="text-xs text-[#806761] mt-0.5">
-            Human-in-the-loop merchant gate. No message is dispatched to WhatsApp without your sign-off.
+            Vale Enterprises merchant gate. No WhatsApp message or special discount is sent without owner sign-off.
           </p>
         </div>
 
-        {/* Filter Pills */}
+        {/* Filter Tabs */}
         <div className="flex items-center gap-1.5">
           {[
             { id: 'ALL' as const, label: 'All Items' },
@@ -74,41 +79,50 @@ export function ApprovalPanel() {
 
       {/* 2. Top Summary Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="p-3.5 rounded-2xl bg-[#FEF3C7] border border-[#F59E0B]/30">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#D97706]">
-            PENDING AUTHORIZATION
-          </span>
-          <div className="text-2xl font-black text-[#D97706] mt-0.5 tabular-nums">
-            {pendingCount} <span className="text-xs font-normal opacity-85">Drafts</span>
+        <div className="p-3.5 rounded-2xl bg-[#FEF3C7] border border-[#F59E0B]/30 flex items-center justify-between">
+          <div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#D97706]">
+              PENDING AUTHORIZATION
+            </span>
+            <div className="text-2xl font-black text-[#D97706] mt-0.5 tabular-nums">
+              {pendingCount} <span className="text-xs font-normal opacity-85">Drafts</span>
+            </div>
           </div>
+          <Clock className="w-6 h-6 text-[#D97706]/50" />
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-[#E8F5E9] border border-[#2E7D32]/25">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#2E7D32]">
-            APPROVED &amp; DISPATCHED
-          </span>
-          <div className="text-2xl font-black text-[#2E7D32] mt-0.5 tabular-nums">
-            {approvedCount} <span className="text-xs font-normal opacity-85">Sent</span>
+        <div className="p-3.5 rounded-2xl bg-[#E8F5E9] border border-[#2E7D32]/25 flex items-center justify-between">
+          <div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#2E7D32]">
+              APPROVED &amp; SENT
+            </span>
+            <div className="text-2xl font-black text-[#2E7D32] mt-0.5 tabular-nums">
+              {approvedCount} <span className="text-xs font-normal opacity-85">Dispatched</span>
+            </div>
           </div>
+          <CheckCircle2 className="w-6 h-6 text-[#2E7D32]/50" />
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-[#FFF3EE] border border-[#FF5E3A]/15">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#806761]">
-            AUTO-SUPPRESSED (OFFLINE)
-          </span>
-          <div className="text-2xl font-black text-[#291A17] mt-0.5 tabular-nums">
-            {suppressedCount} <span className="text-xs font-normal text-[#806761]">Safe</span>
+        <div className="p-3.5 rounded-2xl bg-[#FFF3EE] border border-[#FF5E3A]/15 flex items-center justify-between">
+          <div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#806761]">
+              SUPPRESSED (OFFLINE)
+            </span>
+            <div className="text-2xl font-black text-[#291A17] mt-0.5 tabular-nums">
+              {suppressedCount} <span className="text-xs font-normal text-[#806761]">Safe</span>
+            </div>
           </div>
+          <Ban className="w-6 h-6 text-[#FF5E3A]/50" />
         </div>
       </div>
 
-      {/* 3. Approvals List */}
+      {/* 3. Streamlined Layered Approvals List */}
       <div className="space-y-3 pt-1">
         {filteredApprovals.length === 0 ? (
           <div className="py-12 text-center text-[#806761]">
             <CheckCircle2 className="w-10 h-10 text-[#2E7D32] mx-auto mb-2" />
             <p className="text-xs font-bold text-[#291A17]">All approvals resolved</p>
-            <p className="text-[11px] text-[#806761] mt-0.5">No pending customer messages awaiting sign-off.</p>
+            <p className="text-[11px] text-[#806761] mt-0.5">No pending customer offers or follow-ups awaiting sign-off.</p>
           </div>
         ) : (
           filteredApprovals.map((req) => {
@@ -116,13 +130,14 @@ export function ApprovalPanel() {
             const isApproved = req.status === 'APPROVED';
             const isSuppressed = req.status === 'SUPPRESSED_BY_OFFLINE_SALE';
             const isRejected = req.status === 'REJECTED';
+            const isPayloadExpanded = expandedPayloadId === req.id;
 
             return (
               <div
                 key={req.id}
-                className={`rounded-[28px] p-5 border transition-all ${
+                className={`rounded-[26px] p-4.5 border transition-all ${
                   isPending
-                    ? 'bg-[#FEF3C7]/40 border-[#F59E0B]/35 ring-1 ring-[#F59E0B]/20'
+                    ? 'bg-[#FEF3C7]/40 border-[#F59E0B]/35 shadow-sm'
                     : isSuppressed
                     ? 'bg-[#FDF9F7] border-[#FF5E3A]/15 opacity-85'
                     : isApproved
@@ -130,24 +145,37 @@ export function ApprovalPanel() {
                     : 'bg-[#FEE2E2]/50 border-[#DC2626]/30'
                 }`}
               >
-                {/* Header: Action Title + Customer & Expiry Time */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                  <div>
+                {/* Header: Title + Customer + SLA Expiry */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
+                  <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs font-bold text-[#806761]">#{req.id}</span>
-                      <h3 className="font-bold text-sm text-[#291A17]">{req.actionTitle}</h3>
+                      <h3 className="font-black text-sm text-[#291A17]">{req.actionTitle}</h3>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-[#806761] mt-1">
-                      <span className="text-[#291A17] font-semibold">{req.customerName}</span>
+                    <div className="flex items-center gap-2 text-xs text-[#806761]">
+                      <span className="text-[#291A17] font-bold">{req.customerName}</span>
                       <span>•</span>
-                      <span className="font-mono text-[#806761]">{req.customerPhone}</span>
+                      <span className="font-mono">{req.customerPhone}</span>
                       <span>•</span>
                       <span className="text-[#FF5E3A] font-bold text-[10px]">{req.channel}</span>
                     </div>
                   </div>
 
-                  {/* Status & Expiry Badge */}
+                  {/* Status / Urgency Badge & Price Tag */}
                   <div className="flex items-center gap-2">
+                    {req.quotedAmount && (
+                      <div className="text-right">
+                        <span className="text-sm font-black text-[#291A17] font-mono">
+                          ₹{req.quotedAmount.toLocaleString('en-IN')}
+                        </span>
+                        {req.discountOfferedPercent && (
+                          <span className="block text-[10px] text-[#2E7D32] font-bold">
+                            {req.discountOfferedPercent}% Discount
+                          </span>
+                        )}
+                      </div>
+                    )}
+
                     {isPending && (
                       <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/40 flex items-center gap-1.5 animate-pulse shadow-sm">
                         <Clock className="w-3.5 h-3.5" />
@@ -157,7 +185,7 @@ export function ApprovalPanel() {
                     {isApproved && (
                       <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/30 flex items-center gap-1">
                         <CheckCircle2 className="w-3.5 h-3.5" />
-                        Approved &amp; Dispatched
+                        Approved
                       </span>
                     )}
                     {isSuppressed && (
@@ -175,36 +203,34 @@ export function ApprovalPanel() {
                   </div>
                 </div>
 
-                {/* Payload Breakdown Box */}
-                <div className="p-3.5 rounded-2xl bg-white border border-[#FF5E3A]/15 mb-3 shadow-sm">
-                  <div className="flex items-center justify-between text-xs font-bold text-[#806761] mb-1">
-                    <span className="uppercase tracking-widest text-[10px]">Offer &amp; Action Payload</span>
-                    {req.quotedAmount && (
-                      <span className="text-[#291A17] font-mono font-bold text-sm">
-                        Quoted: ₹{req.quotedAmount.toLocaleString('en-IN')}{' '}
-                        {req.discountOfferedPercent && (
-                          <span className="text-[#2E7D32] text-xs font-bold">
-                            ({req.discountOfferedPercent}% festive offer)
-                          </span>
-                        )}
-                      </span>
-                    )}
+                {/* Single Streamlined Message Preview */}
+                <div className="p-3 rounded-2xl bg-white border border-[#FF5E3A]/15 text-xs text-[#291A17] leading-relaxed mb-2.5 shadow-sm">
+                  <div className="flex items-center justify-between text-[10px] text-[#FF5E3A] font-bold uppercase tracking-wider mb-1">
+                    <span className="flex items-center gap-1">
+                      <MessageSquare className="w-3 h-3" /> Proposed WhatsApp Dispatch
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setExpandedPayloadId(isPayloadExpanded ? null : req.id)}
+                      className="text-[10px] text-[#806761] hover:text-[#291A17] flex items-center gap-0.5 normal-case"
+                    >
+                      <span>{isPayloadExpanded ? 'Hide Payload' : 'View Payload Details'}</span>
+                      {isPayloadExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                    </button>
                   </div>
-                  <p className="text-xs text-[#291A17] leading-relaxed font-sans font-medium">
-                    {req.payloadSummary}
-                  </p>
+                  <p className="font-medium text-[#291A17]">&ldquo;{req.draftMessage}&rdquo;</p>
+
+                  {/* Expandable Payload Drawer */}
+                  {isPayloadExpanded && (
+                    <div className="mt-2.5 pt-2 border-t border-[#FF5E3A]/10 text-[11px] text-[#806761] bg-[#FFF3EE] p-2 rounded-xl">
+                      <strong className="text-[#291A17] block font-bold mb-0.5">Offer Payload Rationale:</strong>
+                      {req.payloadSummary}
+                    </div>
+                  )}
                 </div>
 
-                {/* Draft Message Preview */}
-                <div className="p-3.5 rounded-2xl bg-[#FFF0EB] border border-[#FF5E3A]/20 text-xs text-[#291A17] leading-relaxed mb-3">
-                  <span className="text-[9px] uppercase font-mono tracking-widest text-[#FF5E3A] block mb-1 font-bold">
-                    Exact WhatsApp Message to Dispatch:
-                  </span>
-                  &ldquo;{req.draftMessage}&rdquo;
-                </div>
-
-                {/* Approver & Actions */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2.5 border-t border-[#FF5E3A]/10 text-xs">
+                {/* Approver & Actions Strip */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-1 text-xs">
                   <div className="flex items-center gap-2 text-[#806761] font-mono text-[11px]">
                     <User className="w-3.5 h-3.5 text-[#FF5E3A]" />
                     <span>
@@ -215,7 +241,7 @@ export function ApprovalPanel() {
                   </div>
 
                   {req.suppressionReason && (
-                    <div className="text-xs text-[#D97706] font-medium bg-[#FEF3C7] px-3 py-1.5 rounded-full border border-[#F59E0B]/30">
+                    <div className="text-xs text-[#D97706] font-medium bg-[#FEF3C7] px-3 py-1 rounded-full border border-[#F59E0B]/30">
                       {req.suppressionReason}
                     </div>
                   )}
@@ -232,7 +258,7 @@ export function ApprovalPanel() {
                         Inspect Lead
                       </button>
                       <button
-                        onClick={() => rejectRequest(req.id, 'Merchant custom call preferred')}
+                        onClick={() => rejectRequest(req.id, 'Merchant custom follow-up')}
                         className="px-3.5 py-1.5 rounded-full bg-[#FEE2E2] hover:bg-[#FECACA] text-[#DC2626] border border-[#DC2626]/20 text-xs font-bold transition-colors"
                       >
                         Reject

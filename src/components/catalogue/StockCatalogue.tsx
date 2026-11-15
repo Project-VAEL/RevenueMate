@@ -183,6 +183,13 @@ export function StockCatalogue() {
                   {product.name}
                 </h3>
 
+                {/* Key Spec Snippet */}
+                {product.processor && (
+                  <p className="text-[11px] text-[#806761] mt-0.5 line-clamp-1 font-medium">
+                    {product.processor} • {product.memory}
+                  </p>
+                )}
+
                 {/* Big Price with .00 */}
                 <div className="text-2xl font-black text-[#291A17] mt-2 tabular-nums">
                   ₹{product.price.toLocaleString('en-IN')}<span className="text-sm font-bold text-[#806761]">.00</span>

@@ -128,7 +128,7 @@ export function PipelineOverview() {
                     <span className="font-semibold text-[#291A17]">WhatsApp Omnichannel</span>
                   </div>
                   <h5 className="text-xs font-bold text-[#291A17] group-hover:text-[#FF5E3A] transition-colors leading-snug">
-                    Pooja Malhotra: Banarasi Katan Silk Saree enquiry for reception
+                    Rohan Deshmukh: ThinkPad T14 Gen 5 AMD Ryzen PRO enterprise enquiry
                   </h5>
                   <div className="flex items-center gap-2 text-[10px] text-[#806761] font-mono">
                     <span className="flex items-center gap-1">
@@ -139,9 +139,9 @@ export function PipelineOverview() {
                   </div>
                 </div>
 
-                {/* Saree thumbnail / visual avatar */}
+                {/* Laptop thumbnail */}
                 <div className="w-13 h-13 rounded-2xl bg-[#FFEAE3] border border-[#FF5E3A]/25 flex items-center justify-center shrink-0 text-[#FF5E3A] font-black text-xs shadow-sm">
-                  NAVY
+                  T14
                 </div>
               </div>
 
@@ -159,20 +159,20 @@ export function PipelineOverview() {
                     <span className="font-semibold text-[#291A17]">Instagram DM</span>
                   </div>
                   <h5 className="text-xs font-bold text-[#291A17] group-hover:text-[#FF5E3A] transition-colors leading-snug">
-                    Rhea Sen: Raw Silk Bridal Lehenga (Stock currently UNKNOWN)
+                    Priya Sharma: ASUS ProArt P16 RTX 5080 (Stock currently UNKNOWN)
                   </h5>
                   <div className="flex items-center gap-2 text-[10px] text-[#806761] font-mono">
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" /> 45m ago
                     </span>
                     <span>•</span>
-                    <span className="text-[#D97706] font-bold">STOCK CHECK</span>
+                    <span className="text-[#D97706] font-bold">STOCK AUDIT</span>
                   </div>
                 </div>
 
-                {/* Lehenga thumbnail */}
+                {/* Laptop thumbnail */}
                 <div className="w-13 h-13 rounded-2xl bg-[#FEF3C7] border border-[#F59E0B]/30 flex items-center justify-center shrink-0 text-[#D97706] font-black text-xs shadow-sm">
-                  PINK
+                  PROART
                 </div>
               </div>
 
@@ -190,7 +190,7 @@ export function PipelineOverview() {
                     <span className="font-semibold text-[#291A17]">In-Store Walk-In</span>
                   </div>
                   <h5 className="text-xs font-bold text-[#291A17] group-hover:text-[#FF5E3A] transition-colors leading-snug">
-                    Vikram Mehta: Paid ₹18,500 offline via Counter UPI QR
+                    Vikram Mehta: Paid ₹98,000 offline via Counter UPI QR
                   </h5>
                   <div className="flex items-center gap-2 text-[10px] text-[#806761] font-mono">
                     <span className="flex items-center gap-1">

@@ -10,6 +10,7 @@ import {
   Globe,
   Clock,
   Ban,
+  Laptop,
 } from 'lucide-react';
 import { MessageChannel } from '@/types';
 
@@ -69,11 +70,11 @@ export function LeadInbox() {
   return (
     <div className="flex flex-col h-full bg-white border border-[#FF5E3A]/15 rounded-[32px] p-5 shadow-[0_10px_30px_rgba(220,75,40,0.06)]">
       {/* Header & Filter Pills */}
-      <div className="flex flex-col gap-3 pb-4 border-b border-[#FF5E3A]/10">
+      <div className="flex flex-col gap-2.5 pb-3.5 border-b border-[#FF5E3A]/10">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h3 className="font-black text-sm uppercase tracking-wider text-[#291A17]">Lead Inbox</h3>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FFEAE3] text-[#FF5E3A] border border-[#FF5E3A]/25">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#FFEAE3] text-[#FF5E3A] border border-[#FF5E3A]/25">
               {filteredLeads.length} leads
             </span>
           </div>
@@ -108,7 +109,7 @@ export function LeadInbox() {
         </div>
 
         {/* Priority Filters */}
-        <div className="flex items-center gap-2 pt-1">
+        <div className="flex items-center gap-2 pt-0.5">
           <span className="text-[10px] font-bold text-[#806761] uppercase tracking-widest">
             Priority:
           </span>
@@ -134,7 +135,7 @@ export function LeadInbox() {
         </div>
       </div>
 
-      {/* Leads List */}
+      {/* Clean, Non-Jumbled Leads List */}
       <div className="flex-1 overflow-y-auto space-y-2 mt-3 pr-1">
         {filteredLeads.length === 0 ? (
           <div className="py-12 text-center text-[#806761]">
@@ -144,7 +145,7 @@ export function LeadInbox() {
                 setFilterStatus('ALL');
                 setFilterPriority('ALL');
               }}
-              className="mt-3 px-3 py-1 rounded-full bg-[#FFF0EB] text-xs font-bold text-[#FF5E3A]"
+              className="mt-3 px-3.5 py-1 rounded-full bg-[#FFF0EB] text-xs font-bold text-[#FF5E3A]"
             >
               Reset Filters
             </button>
@@ -158,10 +159,10 @@ export function LeadInbox() {
               <div
                 key={lead.id}
                 onClick={() => setSelectedLeadId(lead.id)}
-                className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left relative overflow-hidden ${
+                className={`p-3 rounded-2xl border transition-all cursor-pointer text-left relative overflow-hidden ${
                   isSelected
-                    ? 'bg-[#FFF0EB] border-[#FF5E3A]/40 shadow-sm ring-1 ring-[#FF5E3A]/30'
-                    : 'bg-white border-[#FF5E3A]/10 hover:bg-[#FFF3EE]/70 hover:border-[#FF5E3A]/20'
+                    ? 'bg-[#FFF0EB] border-[#FF5E3A]/50 shadow-sm ring-1 ring-[#FF5E3A]/30'
+                    : 'bg-[#FDF9F7] border-[#FF5E3A]/10 hover:bg-[#FFF3EE] hover:border-[#FF5E3A]/25'
                 }`}
               >
                 {/* Active indicator bar */}
@@ -169,7 +170,7 @@ export function LeadInbox() {
                   <span className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#FF5E3A]" />
                 )}
 
-                {/* Top Row: Name, Channel, and Priority */}
+                {/* Row 1: Name, Channel, and Priority */}
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <div className="flex items-center gap-2 truncate">
                     <span className="font-bold text-xs text-[#291A17] truncate">{lead.name}</span>
@@ -181,11 +182,12 @@ export function LeadInbox() {
                   <PriorityBadge priority={lead.priority} />
                 </div>
 
-                {/* Middle Row: Product & Price */}
+                {/* Row 2: Laptop Model & Price */}
                 {lead.interestedProductName && (
                   <div className="flex items-center justify-between text-xs text-[#806761] mb-1.5">
-                    <span className="truncate text-[#291A17] font-semibold max-w-[180px]">
-                      {lead.interestedProductName}
+                    <span className="truncate text-[#291A17] font-semibold max-w-[200px] flex items-center gap-1">
+                      <Laptop className="w-3 h-3 text-[#806761] shrink-0" />
+                      <span className="truncate">{lead.interestedProductName}</span>
                     </span>
                     {lead.quotedAmount && (
                       <span className="font-black text-[#291A17] shrink-0 ml-2 font-mono">
@@ -195,14 +197,8 @@ export function LeadInbox() {
                   </div>
                 )}
 
-                {/* Priority Rationale Snippet */}
-                <div className="p-2 rounded-xl bg-[#FFF3EE] border border-[#FF5E3A]/10 text-[10px] text-[#806761] mb-2 leading-relaxed">
-                  <span className="font-bold text-[#E24823]">Why Priority: </span>
-                  {lead.priorityRationale}
-                </div>
-
-                {/* Status Pills & Flags */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-[#FF5E3A]/10 text-[10px]">
+                {/* Row 3: Status Pills & Timestamp (Clean & Compact) */}
+                <div className="flex items-center justify-between gap-2 pt-1 border-t border-[#FF5E3A]/10 text-[10px]">
                   <div className="flex items-center gap-1.5">
                     {lead.status === 'APPROVAL_PENDING' && (
                       <span className="px-2 py-0.5 rounded-full font-bold bg-[#FEF3C7] text-[#D97706] border border-[#F59E0B]/30">
@@ -217,6 +213,11 @@ export function LeadInbox() {
                     {lead.status === 'SALE_RECORDED' && (
                       <span className="px-2 py-0.5 rounded-full font-bold bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/30">
                         Sale Recorded
+                      </span>
+                    )}
+                    {lead.status === 'NEW_ENQUIRY' && (
+                      <span className="px-2 py-0.5 rounded-full font-bold bg-[#FFF3EE] text-[#806761] border border-[#FF5E3A]/15">
+                        New Enquiry
                       </span>
                     )}
                     {lead.isFollowupSuppressed && (

@@ -435,7 +435,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   // ACTION: Simulate an incoming real-world WhatsApp enquiry
   const simulateIncomingEnquiry = () => {
     const demoId = `lead-${Date.now().toString().slice(-4)}`;
-    const randomProduct = products[4]; // Banarasi Katan Silk Saree
+    const randomProduct = products[4] || products[0]; // Lenovo LOQ 15IRX9
 
     const newLead: Lead = {
       id: demoId,
@@ -446,7 +446,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       status: 'NEW_ENQUIRY',
       priority: 'HIGH',
       priorityRationale:
-        'Recent enquiry (Just now) + high-value SKU intent (Banarasi Katan Silk ₹24,900) + asking for immediate courier delivery for anniversary.',
+        'Recent enquiry (Just now) + high-value SKU intent (Lenovo LOQ 15IRX9 RTX 4050 ₹78,900) + asking for urgent dispatch for college coding hackathon.',
       createdAt: 'Just now',
       lastActiveAt: 'Just now',
       interestedProductId: randomProduct.id,
@@ -459,7 +459,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           timestamp: 'Just now',
           type: 'incoming_msg',
           sender: 'customer',
-          text: 'Hello! I saw your store video for the Royal Navy Banarasi Katan Silk Saree. Can this be delivered to Whitefield by tomorrow evening for our anniversary dinner?',
+          text: `Hello Vale Enterprises! Looking for the ${randomProduct.name}. Can this be delivered to Electronic City by tomorrow morning for our college hackathon?`,
           metadata: { channel: 'WHATSAPP' },
         },
         {
@@ -467,7 +467,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           timestamp: 'Just now',
           type: 'system_event',
           sender: 'system',
-          text: 'Enquiry processed: High priority assigned due to immediate delivery requirement and exact SKU match.',
+          text: `Enquiry processed: High priority assigned due to immediate delivery requirement and exact SKU match for ${randomProduct.name}.`,
         },
       ],
     };
@@ -654,7 +654,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setPayments(INITIAL_PAYMENTS);
     setSelectedLeadId('lead-1');
     setActiveView('pipeline');
-    setSystemNotification('↺ Demo dataset successfully reset to initial boutique state.');
+    setSystemNotification('↺ Demo dataset successfully reset to initial Vale Enterprises state.');
   };
 
   return (

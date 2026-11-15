@@ -60,6 +60,14 @@ export interface Product {
   rackLocation: string;
   accentColor: string;
   notes?: string;
+  brand?: string;
+  modelCode?: string;
+  processor?: string;
+  memory?: string;
+  storage?: string;
+  graphics?: string;
+  display?: string;
+  batteryWh?: number;
 }
 
 export type ApprovalStatus =

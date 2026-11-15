@@ -26,7 +26,7 @@ export function RightPanel() {
 
   const currentLead = leads.find((l) => l.id === selectedLeadId) || leads[0];
   const matchedProduct = products.find((p) => p.id === currentLead?.interestedProductId) || products[0];
-  const chargeAmount = currentLead?.quotedAmount || matchedProduct?.price || 18500;
+  const chargeAmount = currentLead?.quotedAmount || matchedProduct?.price || 78900;
 
   const handleQuickRecord = () => {
     recordOfflineSale({
