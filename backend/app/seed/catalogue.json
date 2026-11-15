@@ -1,0 +1,7 @@
+{
+  "_owner": "P3",
+  "_purpose": "Merchant-specific live catalogue and stock. This is intentionally empty until the actual shop confirms SKU, selling price and stock count.",
+  "_reference_data": "See data/databases/laptop_reference.sqlite and data/reference/laptop_catalogue.json for manufacturer-sourced product knowledge. Do not copy reference models into merchant inventory without merchant confirmation.",
+  "_prompt": "For each actual shop item provide exact product variant, store SKU, approved price_paise and quantity. Unknown values must not be guessed.",
+  "products": []
+}

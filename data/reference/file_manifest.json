@@ -1,0 +1,67 @@
+[
+  {
+    "path": "data/databases/hardware_knowledge.sqlite",
+    "sha256": "4ae7ab4531afd1cea76556bdb35536f64db2f31e04789d49ce2470175bd434bd",
+    "bytes": 118784
+  },
+  {
+    "path": "data/databases/laptop_reference.sqlite",
+    "sha256": "f624471e2fd9bd3734c5cdad6d8b096c343be877ea85d4dc99d5fbb9b26c1d58",
+    "bytes": 151552
+  },
+  {
+    "path": "data/reference/README.md",
+    "sha256": "3eaa7981fe1f374929c8c2bc55790bce4ccb1ae7835f3fa70fb24b45f49c7cfa",
+    "bytes": 3923
+  },
+  {
+    "path": "data/reference/dataset_summary.json",
+    "sha256": "b8285efae95376faa384aa334254866ad6174be090c40e17efe09db19d100d47",
+    "bytes": 656
+  },
+  {
+    "path": "data/reference/evidence_map.json",
+    "sha256": "2098536895f9227e72176094b03750ec5a03d41c629b687ebc5c37cec374a9c2",
+    "bytes": 16598
+  },
+  {
+    "path": "data/reference/family_only_profiles.json",
+    "sha256": "b0a1530bfd99fa2e119ad71693caf847bb8e3fc1ad921b4291bc5eaa6b9eea55",
+    "bytes": 1925
+  },
+  {
+    "path": "data/reference/hardware_components.json",
+    "sha256": "a116e64d48e13c972e6f6eaaf5493e82f67b86a93f3d5d1b5e76a9003bd4ddc4",
+    "bytes": 29752
+  },
+  {
+    "path": "data/reference/laptop_catalogue.json",
+    "sha256": "6da340eecd656d1400cdde1be1e296e4ac745e2890f0f701c3729b0247bc2028",
+    "bytes": 24758
+  },
+  {
+    "path": "data/reference/merchant_offer_template.json",
+    "sha256": "a26c756596f06e6f8b756681fc66e1f5791653ee1e05e994270454f554741a8e",
+    "bytes": 461
+  },
+  {
+    "path": "data/reference/product_component_links.json",
+    "sha256": "73795004a261319b234f6c1e6486d5b04c4117cbcefdb5b7903e4c9dfc88cdec",
+    "bytes": 7095
+  },
+  {
+    "path": "data/reference/product_families.json",
+    "sha256": "8cee2765c60ea9dc7f8a1d153310de979077976ef1c9fbe9f8ad77b25895c03c",
+    "bytes": 3734
+  },
+  {
+    "path": "data/reference/source_registry.json",
+    "sha256": "de705a9990245dbeb42c9eec7e48112c124c66d1e5d3e550e9d68992b2216c7f",
+    "bytes": 11973
+  },
+  {
+    "path": "data/reference/validate_reference_databases.py",
+    "sha256": "c7b8f1addcb1cd1274f7b1fd4017d7470991e96018c940fcc6ed24f075a4e6a3",
+    "bytes": 2299
+  }
+]

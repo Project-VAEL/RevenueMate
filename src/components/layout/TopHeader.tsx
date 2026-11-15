@@ -12,13 +12,14 @@ export function TopHeader() {
     resetDemoData,
     systemNotification,
     setIsOfflineSaleModalOpen,
+    isBackendConnected,
   } = useStore();
 
   return (
     <header className="w-full flex flex-col gap-2 pt-1 px-2 md:px-4">
       <div className="flex items-center justify-between gap-4 py-1.5">
-        {/* Left Side: Search Bar */}
-        <div className="flex items-center gap-4 flex-1 max-w-md">
+        {/* Left Side: Search Bar & Live API Badge */}
+        <div className="flex items-center gap-3 flex-1 max-w-lg">
           <div className="relative w-full">
             <Search className="w-4 h-4 text-[#806761] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
@@ -28,6 +29,12 @@ export function TopHeader() {
               placeholder="SEARCH LAPTOPS, SPECS, SKUS, CUSTOMERS..."
               className="w-full bg-white/90 border border-[#FF5E3A]/15 hover:border-[#FF5E3A]/30 rounded-full pl-10 pr-4 py-2 text-xs text-[#291A17] placeholder-[#806761]/70 tracking-wider font-semibold focus:outline-none focus:border-[#FF5E3A]/50 focus:ring-2 focus:ring-[#FF5E3A]/15 transition-all shadow-sm"
             />
+          </div>
+
+          {/* Live Backend Connection Indicator */}
+          <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold shrink-0 bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/25 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse" />
+            <span>FastAPI Live :8000</span>
           </div>
         </div>
 

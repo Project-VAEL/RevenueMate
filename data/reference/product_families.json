@@ -1,0 +1,168 @@
+[
+  {
+    "family_id": "F-ASUS-VIVOBOOK15",
+    "brand": "ASUS",
+    "family_name": "Vivobook 15 (X1504)",
+    "segment_tags": [
+      "mainstream",
+      "student",
+      "home_productivity"
+    ],
+    "source_ids": [
+      "SRC-ASUS-VIVOBOOK15"
+    ],
+    "eligibility": "family_has_variant_records"
+  },
+  {
+    "family_id": "F-HP-OMNI14",
+    "brand": "HP",
+    "family_name": "OmniBook 5 LaptopAI 14-mh0045TU",
+    "segment_tags": [
+      "portable_productivity",
+      "student",
+      "everyday"
+    ],
+    "source_ids": [
+      "SRC-HP-OMNI14"
+    ],
+    "eligibility": "exact_variant"
+  },
+  {
+    "family_id": "F-HP-OMNI16",
+    "brand": "HP",
+    "family_name": "OmniBook 5 Laptop 16-ba1124TU",
+    "segment_tags": [
+      "large_screen_productivity",
+      "student",
+      "home_office"
+    ],
+    "source_ids": [
+      "SRC-HP-OMNI16"
+    ],
+    "eligibility": "exact_variant"
+  },
+  {
+    "family_id": "F-LENOVO-T14G5AMD",
+    "brand": "Lenovo",
+    "family_name": "ThinkPad T14 Gen 5 (AMD)",
+    "segment_tags": [
+      "business",
+      "enterprise",
+      "productivity"
+    ],
+    "source_ids": [
+      "SRC-LENOVO-T14"
+    ],
+    "eligibility": "exact_variant"
+  },
+  {
+    "family_id": "F-LENOVO-LOQ15IRX9",
+    "brand": "Lenovo",
+    "family_name": "LOQ 15IRX9",
+    "segment_tags": [
+      "gaming",
+      "gpu_accelerated_workloads"
+    ],
+    "source_ids": [
+      "SRC-LENOVO-LOQ"
+    ],
+    "eligibility": "exact_variant"
+  },
+  {
+    "family_id": "F-HP-VICTUS15",
+    "brand": "HP",
+    "family_name": "Victus Gaming Laptop 15-fa2000 series",
+    "segment_tags": [
+      "gaming",
+      "performance"
+    ],
+    "source_ids": [
+      "SRC-HP-VICTUS"
+    ],
+    "eligibility": "exact_variant"
+  },
+  {
+    "family_id": "F-ASUS-PROARTP16",
+    "brand": "ASUS",
+    "family_name": "ProArt P16 (H7606)",
+    "segment_tags": [
+      "creator",
+      "mobile_workstation_class",
+      "gpu_accelerated_workloads"
+    ],
+    "source_ids": [
+      "SRC-ASUS-PROART"
+    ],
+    "eligibility": "exact_variants"
+  },
+  {
+    "family_id": "F-ASUS-TUF-A15-2024",
+    "brand": "ASUS",
+    "family_name": "TUF Gaming A15 (2024)",
+    "segment_tags": [
+      "gaming"
+    ],
+    "source_ids": [
+      "SRC-ASUS-TUF"
+    ],
+    "eligibility": "family_only_configuration_pairing_required"
+  },
+  {
+    "family_id": "F-APPLE-AIR-13-M5",
+    "brand": "Apple",
+    "family_name": "MacBook Air 13-inch (M5)",
+    "segment_tags": [
+      "portable_productivity",
+      "developer_workstation_lightweight",
+      "everyday"
+    ],
+    "source_ids": [
+      "SRC-APPLE-AIR"
+    ],
+    "eligibility": "selected_base_configuration"
+  },
+  {
+    "family_id": "F-APPLE-PRO-14-M5PRO",
+    "brand": "Apple",
+    "family_name": "MacBook Pro 14-inch (M5 Pro family)",
+    "segment_tags": [
+      "professional_creator",
+      "developer_workstation",
+      "high_performance"
+    ],
+    "source_ids": [
+      "SRC-APPLE-PRO"
+    ],
+    "eligibility": "family_only_configuration_pairing_required"
+  },
+  {
+    "family_id": "F-LENOVO-IDEAPADSLIM3-15IRH10",
+    "brand": "Lenovo",
+    "family_name": "IdeaPad Slim 3i Gen 10 (15IRH10)",
+    "segment_tags": [
+      "mainstream",
+      "student",
+      "office_productivity",
+      "general_programming"
+    ],
+    "source_ids": [
+      "SRC-LENOVO-IDEAPAD-SLIM3"
+    ],
+    "eligibility": "exact_india_sku_variant_available"
+  },
+  {
+    "family_id": "F-ACER-SWIFTGO14-SFG14-73",
+    "brand": "Acer",
+    "family_name": "Swift Go 14 (SFG14-73)",
+    "segment_tags": [
+      "thin_and_light",
+      "student",
+      "developer_productivity",
+      "creator_entry"
+    ],
+    "source_ids": [
+      "SRC-ACER-SWIFTGO14"
+    ],
+    "eligibility": "exact_india_part_number_variant_available"
+  }
+]

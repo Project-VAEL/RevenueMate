@@ -18,6 +18,14 @@ import {
   INITIAL_APPROVALS,
   INITIAL_PAYMENTS,
 } from '@/data/seedData';
+import {
+  checkBackendHealth,
+  getCatalogueProducts,
+  getLeads,
+  approveDraft,
+  updateProductStock as apiUpdateStock,
+  simulateMockPay,
+} from '@/lib/api';
 
 type ViewMode = 'pipeline' | 'inbox' | 'catalogue' | 'approvals' | 'payments';
 
@@ -56,6 +64,7 @@ interface StoreContextType {
   // System flags
   mockMode: boolean;
   setMockMode: (val: boolean) => void;
+  isBackendConnected: boolean;
   systemNotification: string | null;
   setSystemNotification: (msg: string | null) => void;
 
@@ -106,7 +115,65 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [isDemoGuideOpen, setIsDemoGuideOpen] = useState(false);
 
   const [mockMode, setMockMode] = useState<boolean>(true);
+  const [isBackendConnected, setIsBackendConnected] = useState<boolean>(false);
   const [systemNotification, setSystemNotification] = useState<string | null>(null);
+
+  // Sync with live FastAPI backend on mount
+  useEffect(() => {
+    let isMounted = true;
+    async function syncBackend() {
+      try {
+        const health = await checkBackendHealth();
+        if (health?.status === 'ok' && isMounted) {
+          setIsBackendConnected(true);
+          setMockMode(false);
+          setSystemNotification('🟢 Connected to live FastAPI backend (http://localhost:8000)');
+
+          // Fetch products from live backend catalogue
+          try {
+            const apiProducts = await getCatalogueProducts();
+            if (apiProducts && apiProducts.length > 0 && isMounted) {
+              setProducts((prev) =>
+                prev.map((p) => {
+                  const match = apiProducts.find((ap) => ap.sku === p.sku);
+                  if (match) {
+                    return {
+                      ...p,
+                      id: match.id || p.id,
+                      price: match.price_paise / 100,
+                      stockQuantity: match.quantity ?? null,
+                      status:
+                        match.quantity === null || match.quantity === undefined
+                          ? 'UNKNOWN'
+                          : match.quantity === 0
+                          ? 'OUT_OF_STOCK'
+                          : match.quantity < 3
+                          ? 'LOW_STOCK'
+                          : 'IN_STOCK',
+                      isStale: match.stock_is_stale,
+                    };
+                  }
+                  return p;
+                })
+              );
+            }
+          } catch (err) {
+            console.warn('Could not sync products from live backend:', err);
+          }
+        }
+      } catch (err) {
+        if (isMounted) {
+          setIsBackendConnected(false);
+          setMockMode(true);
+        }
+      }
+    }
+
+    syncBackend();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Auto-clear notification after 4 seconds
   useEffect(() => {
@@ -427,6 +494,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       );
     }
 
+    if (isBackendConnected && newQuantity !== null) {
+      apiUpdateStock(productId, newQuantity).catch((err) =>
+        console.warn('Backend live stock update error:', err)
+      );
+    }
+
     setSystemNotification(`✓ Inventory updated for ${matchingProduct?.name || 'product'}.`);
     setIsStockUpdateModalOpen(false);
     setSelectedProductForUpdate(null);
@@ -690,6 +763,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
         mockMode,
         setMockMode,
+        isBackendConnected,
         systemNotification,
         setSystemNotification,
 
